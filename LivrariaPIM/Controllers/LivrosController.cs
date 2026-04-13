@@ -30,5 +30,37 @@ namespace LivrariaPIM.Controllers
             await _context.SaveChangesAsync();
             return Ok(livro);
         }
+
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, Livro livro)
+        {
+            var livroExistente = _context.Livros.Find(id);
+
+            if (livroExistente == null)
+                return NotFound();
+
+            livroExistente.Titulo = livro.Titulo;
+            livroExistente.Autor = livro.Autor;
+            livroExistente.Preco = livro.Preco;
+            livroExistente.GeneroId = livro.GeneroId;
+
+            _context.SaveChanges();
+
+            return Ok(livroExistente);
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            var livro = _context.Livros.Find(id);
+
+            if (livro == null)
+                return NotFound();
+
+            _context.Livros.Remove(livro);
+            _context.SaveChanges();
+
+            return NoContent();
+        }
     }
 }

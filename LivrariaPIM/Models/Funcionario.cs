@@ -2,8 +2,8 @@
 
 namespace LivrariaPIM.Models
 {
-    [Table("Cliente")]
-    public class Cliente
+    [Table("Funcionario")]
+    public class Funcionario
     {
         public int Id { get; set; }
 
@@ -11,13 +11,12 @@ namespace LivrariaPIM.Models
 
         public string Email { get; set; }
 
-        public string Telefone { get; set; }
-
         public string SenhaHash { get; set; }
+
+        public string Cargo { get; set; }
 
         public DateTime DataCadastro { get; set; } = DateTime.Now;
 
         public bool Ativo { get; set; }
     }
 }
-

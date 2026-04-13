@@ -14,8 +14,8 @@ namespace LivrariaPIM.Data
         public DbSet<Genero> Generos { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Pedido> Pedidos { get; set; }
-        public DbSet<ItemPedido> ItensPedido { get; set; }
+        public DbSet<ItemPedido> ItemPedidos { get; set; }
         public DbSet<Pagamento> Pagamentos { get; set; }
-        public DbSet<Estoque> Estoques { get; set; }
+        public DbSet<Funcionario> Funcionarios { get; set; }
     }
 }
