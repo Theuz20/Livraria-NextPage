@@ -22,14 +22,25 @@ namespace LivrariaPIM.Controllers
             return Ok(_context.Funcionarios.ToList());
         }
 
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            var funcionario = _context.Funcionarios.Find(id);
+
+            if (funcionario == null)
+                return NotFound(new { mensagem = "Funcionário não encontrado." });
+
+            return Ok(funcionario);
+        }
+
         [HttpPost]
         public IActionResult Post(Funcionario funcionario)
         {
-
             funcionario.SenhaHash = HashHelper.GerarHash(funcionario.SenhaHash);
 
             _context.Funcionarios.Add(funcionario);
             _context.SaveChanges();
+
             return Ok(funcionario);
         }
 
@@ -39,11 +50,11 @@ namespace LivrariaPIM.Controllers
             var funcExistente = _context.Funcionarios.Find(id);
 
             if (funcExistente == null)
-                return NotFound();
+                return NotFound(new { mensagem = "Funcionário não encontrado." });
 
             funcExistente.Nome = funcionario.Nome;
             funcExistente.Email = funcionario.Email;
-            funcExistente.SenhaHash = funcionario.SenhaHash;
+            funcExistente.SenhaHash = HashHelper.GerarHash(funcionario.SenhaHash);
             funcExistente.Cargo = funcionario.Cargo;
             funcExistente.Ativo = funcionario.Ativo;
 
@@ -58,7 +69,7 @@ namespace LivrariaPIM.Controllers
             var func = _context.Funcionarios.Find(id);
 
             if (func == null)
-                return NotFound();
+                return NotFound(new { mensagem = "Funcionário não encontrado." });
 
             _context.Funcionarios.Remove(func);
             _context.SaveChanges();

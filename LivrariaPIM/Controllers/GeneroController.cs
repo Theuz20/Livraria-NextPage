@@ -21,11 +21,23 @@ namespace LivrariaPIM.Controllers
             return Ok(_context.Generos.ToList());
         }
 
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            var genero = _context.Generos.Find(id);
+
+            if (genero == null)
+                return NotFound(new { mensagem = "Gênero não encontrado." });
+
+            return Ok(genero);
+        }
+
         [HttpPost]
         public IActionResult Post(Genero genero)
         {
             _context.Generos.Add(genero);
             _context.SaveChanges();
+
             return Ok(genero);
         }
 
@@ -35,7 +47,7 @@ namespace LivrariaPIM.Controllers
             var generoExistente = _context.Generos.Find(id);
 
             if (generoExistente == null)
-                return NotFound();
+                return NotFound(new { mensagem = "Gênero não encontrado." });
 
             generoExistente.Nome = genero.Nome;
 
@@ -50,7 +62,12 @@ namespace LivrariaPIM.Controllers
             var genero = _context.Generos.Find(id);
 
             if (genero == null)
-                return NotFound();
+                return NotFound(new { mensagem = "Gênero não encontrado." });
+
+            var possuiLivros = _context.Livros.Any(l => l.GeneroId == id);
+
+            if (possuiLivros)
+                return BadRequest(new { mensagem = "Não é possível excluir o gênero, pois existem livros vinculados a ele." });
 
             _context.Generos.Remove(genero);
             _context.SaveChanges();

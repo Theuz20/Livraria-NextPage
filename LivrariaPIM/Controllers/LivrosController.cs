@@ -19,15 +19,35 @@ namespace LivrariaPIM.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var livros = await _context.Livros.Include(l => l.Genero).ToListAsync();
+            var livros = await _context.Livros
+                .Include(l => l.Genero)
+                .ToListAsync();
+
             return Ok(livros);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var livro = await _context.Livros
+                .Include(l => l.Genero)
+                .FirstOrDefaultAsync(l => l.Id == id);
+
+            if (livro == null)
+                return NotFound(new { mensagem = "Livro não encontrado." });
+
+            return Ok(livro);
         }
 
         [HttpPost]
         public async Task<IActionResult> Post(Livro livro)
         {
+            if (!_context.Generos.Any(g => g.Id == livro.GeneroId))
+                return NotFound(new { mensagem = "Gênero não encontrado." });
+
             _context.Livros.Add(livro);
             await _context.SaveChangesAsync();
+
             return Ok(livro);
         }
 
@@ -37,11 +57,15 @@ namespace LivrariaPIM.Controllers
             var livroExistente = _context.Livros.Find(id);
 
             if (livroExistente == null)
-                return NotFound();
+                return NotFound(new { mensagem = "Livro não encontrado." });
+
+            if (!_context.Generos.Any(g => g.Id == livro.GeneroId))
+                return NotFound(new { mensagem = "Gênero não encontrado." });
 
             livroExistente.Titulo = livro.Titulo;
             livroExistente.Autor = livro.Autor;
             livroExistente.Preco = livro.Preco;
+            livroExistente.Estoque = livro.Estoque;
             livroExistente.GeneroId = livro.GeneroId;
 
             _context.SaveChanges();
@@ -55,7 +79,7 @@ namespace LivrariaPIM.Controllers
             var livro = _context.Livros.Find(id);
 
             if (livro == null)
-                return NotFound();
+                return NotFound(new { mensagem = "Livro não encontrado." });
 
             _context.Livros.Remove(livro);
             _context.SaveChanges();
