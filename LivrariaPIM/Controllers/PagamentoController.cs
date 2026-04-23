@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using LivrariaPIM.Data;
 using LivrariaPIM.Models;
+using System.Linq;
 
 namespace LivrariaPIM.Controllers
 {
@@ -39,6 +40,22 @@ namespace LivrariaPIM.Controllers
 
             if (!pedidoExiste)
                 return NotFound(new { mensagem = "Pedido não encontrado." });
+
+            var itensPedido = _context.ItemPedidos
+                .Where(i => i.PedidoId == pagamento.PedidoId)
+                .ToList();
+
+            if (!itensPedido.Any())
+                return BadRequest(new { mensagem = "O pedido não possui itens." });
+
+            pagamento.Valor = itensPedido.Sum(i => i.Quantidade * i.PrecoUnitario);
+
+            var pedido = _context.Pedidos.Find(pagamento.PedidoId);
+
+            if (pedido != null)
+            {
+                pedido.Status = "Pago";
+            }
 
             _context.Pagamentos.Add(pagamento);
             _context.SaveChanges();
@@ -81,6 +98,21 @@ namespace LivrariaPIM.Controllers
             _context.SaveChanges();
 
             return NoContent();
+        }
+
+        [HttpPut("cancelar/{id}")]
+        public IActionResult Cancelar(int id)
+        {
+            var pedido = _context.Pedidos.Find(id);
+
+            if (pedido == null)
+                return NotFound(new { mensagem = "Pedido não encontrado." });
+
+            pedido.Status = "Cancelado";
+
+            _context.SaveChanges();
+
+            return Ok(new { mensagem = "Pedido cancelado com sucesso." });
         }
     }
 }
