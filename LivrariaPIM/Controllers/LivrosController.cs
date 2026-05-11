@@ -2,9 +2,11 @@
 using LivrariaPIM.Data;
 using LivrariaPIM.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LivrariaPIM.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class LivrosController : ControllerBase

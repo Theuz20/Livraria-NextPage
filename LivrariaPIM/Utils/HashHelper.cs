@@ -20,5 +20,11 @@ namespace LivrariaPIM.Utils
                 return builder.ToString();
             }
         }
+        public static bool VerificarHash(string senha, string hash)
+        {
+            var senhaHash = GerarHash(senha);
+
+            return senhaHash == hash;
+        }
     }
 }
