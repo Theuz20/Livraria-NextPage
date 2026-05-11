@@ -53,9 +53,3 @@
   flex-direction: column;
   justify-content: space-between;
 }
-
-.informacoes-livro {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
