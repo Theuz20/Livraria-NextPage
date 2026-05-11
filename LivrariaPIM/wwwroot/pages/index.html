@@ -1,12 +1,200 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Livraria</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NextPage Livraria</title>
 
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  
 </head>
 
 <body>
+
+  <header>
+    <div class="container barra-navegacao">
+
+      <div class="logo-livraria">
+        Next<span>Page</span>
+      </div>
+
+      <div class="caixa-pesquisa">
+        <input type="text" placeholder="Pesquise livros, autores e categorias...">
+        <button>Buscar</button>
+      </div>
+
+      <nav class="menu-navegacao">
+        <a href="#">Início</a>
+        <a href="#">Livros</a>
+        <a href="#">Categorias</a>
+        <a href="#">Login</a>
+        <a href="#">Carrinho</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="banner-principal">
+
+      <div class="texto-banner">
+        <h1>Descubra mundos através da leitura</h1>
+
+        <p>
+          Explore milhares de livros de tecnologia, ficção, negócios, romance e muito mais.
+          Sua próxima leitura começa aqui.
+        </p>
+
+        <button>Explorar Livros</button>
+      </div>
+
+      <div class="imagem-banner">
+        <img src="assets/img/banner.jpg" alt="Banner Livraria">
+      </div>
+
+    </section>
+
+    <section>
+
+      <div class="titulo-secao">
+        <h2>Livros em Destaque</h2>
+        <a href="#">Ver todos</a>
+      </div>
+
+      <div class="grade-livros">
+
+        <div class="card-livro">
+          <img src="assets/img/clean-code.jpg" alt="Livro Clean Code">
+
+          <div class="informacoes-livro">
+            <span>Programação</span>
+            <h3>Clean Code</h3>
+            <span class="preco-livro">R$ 79,90</span>
+            <button>Adicionar ao Carrinho</button>
+          </div>
+        </div>
+
+        <div class="card-livro">
+          <img src="assets/img/algoritmos.jpg" alt="Livro Algoritmos">
+
+          <div class="informacoes-livro">
+            <span>Tecnologia</span>
+            <h3>Entendendo Algoritmos</h3>
+            <span class="preco-livro">R$ 64,90</span>
+            <button>Adicionar ao Carrinho</button>
+          </div>
+        </div>
+
+        <div class="card-livro">
+          <img src="assets/img/python-fluente.webp" alt="Livro Python Fluente">
+
+          <div class="informacoes-livro">
+            <span>Desenvolvimento</span>
+            <h3>Python Fluente</h3>
+            <span class="preco-livro">R$ 89,90</span>
+            <button>Adicionar ao Carrinho</button>
+          </div>
+        </div>
+
+        <div class="card-livro">
+          <img src="assets/img/arquitetura-limpa.jpg" alt="Livro Arquitetura Limpa">
+
+          <div class="informacoes-livro">
+            <span>Back-End</span>
+            <h3>Arquitetura Limpa</h3>
+            <span class="preco-livro">R$ 72,90</span>
+            <button>Adicionar ao Carrinho</button>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section>
+
+      <div class="titulo-secao">
+        <h2>Categorias</h2>
+      </div>
+
+      <div class="lista-categorias">
+
+        <div class="card-categoria">
+          <h3>Programação</h3>
+        </div>
+
+        <div class="card-categoria">
+          <h3>Ficção</h3>
+        </div>
+
+        <div class="card-categoria">
+          <h3>Tecnologia</h3>
+        </div>
+
+        <div class="card-categoria">
+          <h3>Negócios</h3>
+        </div>
+
+        <div class="card-categoria">
+          <h3>Romance</h3>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+
+    <div class="container">
+
+      <div class="conteudo-rodape">
+
+        <div class="coluna-rodape">
+          <h3>NextPage</h3>
+
+          <p>
+            Sua livraria online moderna com os melhores livros para aprendizado,
+            entretenimento e desenvolvimento pessoal.
+          </p>
+        </div>
+
+        <div class="coluna-rodape">
+          <h3>Institucional</h3>
+
+          <a href="#">Sobre Nós</a>
+          <a href="#">Contato</a>
+          <a href="#">Termos de Uso</a>
+        </div>
+
+        <div class="coluna-rodape">
+          <h3>Categorias</h3>
+
+          <a href="#">Programação</a>
+          <a href="#">Tecnologia</a>
+          <a href="#">Ficção</a>
+        </div>
+
+        <div class="coluna-rodape">
+          <h3>Atendimento</h3>
+
+          <p>Email: contato@nextpage.com</p>
+          <p>Telefone: (11) 99999-9999</p>
+        </div>
+
+      </div>
+
+      <div class="rodape-final">
+        © 2026 NextPage Livraria - Todos os direitos reservados.
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
