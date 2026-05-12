@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using LivrariaPIM.Data;
 using LivrariaPIM.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LivrariaPIM.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class PedidoController : ControllerBase
@@ -83,6 +85,16 @@ namespace LivrariaPIM.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
+            var possuiItens = _context.ItemPedidos.Any(i => i.PedidoId == id);
+            var possuiPagamento = _context.Pagamentos.Any(p => p.PedidoId == id);
+
+            if (possuiItens || possuiPagamento)
+            {
+                return BadRequest(new
+                {
+                    mensagem = "Não é possível excluir um pedido com itens ou pagamentos vinculados."
+                });
+            }
             var pedido = _context.Pedidos.Find(id);
 
             if (pedido == null)
@@ -92,6 +104,9 @@ namespace LivrariaPIM.Controllers
             _context.SaveChanges();
 
             return NoContent();
+
+
         }
+
     }
 }
