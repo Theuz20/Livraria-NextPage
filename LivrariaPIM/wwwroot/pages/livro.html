@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clean Code | NextPage</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/livro.css">
+</head>
+<body>
+  <header>
+    <div class="container barra-navegacao">
+      <a class="logo-livraria" href="index.html">
+        Next<span>Page</span>
+      </a>
+
+      <form class="caixa-pesquisa">
+        <input type="search" placeholder="Pesquise livros, autores e categorias..." aria-label="Pesquisar livros">
+        <button type="submit">Buscar</button>
+      </form>
+
+      <nav class="menu-navegacao">
+        <a href="index.html">Início</a>
+        <a href="livros.html">Livros</a>
+        <a href="index.html#categorias">Categorias</a>
+        <a href="#">Carrinho</a>
+        <a href="#" class="link-login">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container pagina-detalhe">
+    <a class="voltar-catalogo" href="livros.html">Voltar para livros</a>
+
+    <section class="detalhe-livro">
+      <div class="capa-detalhe">
+        <span class="badge-detalhe">Mais vendido</span>
+        <img src="assets/img/clean-code.jpg" alt="Capa do livro Clean Code">
+      </div>
+
+      <div class="conteudo-detalhe">
+        <span class="categoria-livro">Programação</span>
+        <h1>Clean Code</h1>
+        <p class="autor-detalhe">Robert C. Martin</p>
+
+        <div class="avaliacao-detalhe">
+          <span>★★★★★</span>
+          <strong>4.9</strong>
+          <p>245 avaliações de clientes</p>
+        </div>
+
+        <p class="descricao-curta">
+          Um guia essencial para escrever código mais claro, organizado e fácil de manter.
+          Indicado para desenvolvedores que querem melhorar a qualidade dos próprios projetos.
+        </p>
+
+        <div class="compra-detalhe">
+          <div>
+            <span class="rotulo-preco">Preço</span>
+            <strong class="preco-detalhe">R$ 79,90</strong>
+            <span class="parcelamento-detalhe">ou 2x de R$ 39,95 sem juros</span>
+          </div>
+
+          <button type="button">Adicionar ao carrinho</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="informacoes-produto">
+      <div class="bloco-descricao">
+        <h2>Sobre o livro</h2>
+        <p>
+          Clean Code apresenta princípios, práticas e exemplos para transformar código confuso
+          em código legível. O livro mostra como nomear variáveis, organizar funções, evitar
+          duplicação, escrever testes e construir sistemas mais fáceis de evoluir.
+        </p>
+        <p>
+          É uma leitura muito recomendada para quem já programa e quer desenvolver um olhar mais
+          profissional sobre manutenção, clareza e responsabilidade técnica.
+        </p>
+      </div>
+
+      <aside class="ficha-tecnica">
+        <h2>Detalhes do produto</h2>
+
+        <dl>
+          <div>
+            <dt>Autor</dt>
+            <dd>Robert C. Martin</dd>
+          </div>
+
+          <div>
+            <dt>Editora</dt>
+            <dd>Alta Books</dd>
+          </div>
+
+          <div>
+            <dt>Páginas</dt>
+            <dd>425 páginas</dd>
+          </div>
+
+          <div>
+            <dt>Idioma</dt>
+            <dd>Português</dd>
+          </div>
+
+          <div>
+            <dt>Categoria</dt>
+            <dd>Programação</dd>
+          </div>
+
+          <div>
+            <dt>Formato</dt>
+            <dd>Capa comum</dd>
+          </div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="livros-relacionados">
+      <div class="titulo-secao">
+        <div>
+          <span>Você também pode gostar</span>
+          <h2>Livros relacionados</h2>
+        </div>
+
+        <a href="livros.html">Ver todos</a>
+      </div>
+
+      <div class="grade-livros">
+        <article class="card-livro">
+          <img src="assets/img/arquitetura-limpa.jpg" alt="Capa do livro Arquitetura Limpa">
+
+          <div class="informacoes-livro">
+            <span class="categoria-livro">Back-end</span>
+            <h3>Arquitetura Limpa</h3>
+            <p>Robert C. Martin</p>
+            <div class="area-preco">
+              <span class="preco-livro">R$ 72,90</span>
+            </div>
+            <button type="button">Adicionar ao carrinho</button>
+          </div>
+        </article>
+
+        <article class="card-livro">
+          <img src="assets/img/programador-pragmatico.jpg" alt="Capa do livro O Programador Pragmático">
+
+          <div class="informacoes-livro">
+            <span class="categoria-livro">Programação</span>
+            <h3>O Programador Pragmático</h3>
+            <p>Andrew Hunt</p>
+            <div class="area-preco">
+              <span class="preco-livro">R$ 84,90</span>
+            </div>
+            <button type="button">Adicionar ao carrinho</button>
+          </div>
+        </article>
+
+        <article class="card-livro">
+          <img src="assets/img/algoritmos.jpg" alt="Capa do livro Entendendo Algoritmos">
+
+          <div class="informacoes-livro">
+            <span class="categoria-livro">Tecnologia</span>
+            <h3>Entendendo Algoritmos</h3>
+            <p>Aditya Bhargava</p>
+            <div class="area-preco">
+              <span class="preco-livro">R$ 64,90</span>
+            </div>
+            <button type="button">Adicionar ao carrinho</button>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="conteudo-rodape">
+        <div class="coluna-rodape coluna-principal">
+          <h3>NextPage</h3>
+          <p>
+            Sua livraria online moderna com os melhores livros para aprendizado,
+            entretenimento e desenvolvimento pessoal.
+          </p>
+        </div>
+
+        <div class="coluna-rodape">
+          <h3>Institucional</h3>
+          <a href="#">Sobre nós</a>
+          <a href="#">Contato</a>
+          <a href="#">Termos de uso</a>
+        </div>
+
+        <div class="coluna-rodape">
+          <h3>Categorias</h3>
+          <a href="#">Programação</a>
+          <a href="#">Tecnologia</a>
+          <a href="#">Ficção</a>
+        </div>
+
+        <div class="coluna-rodape">
+          <h3>Atendimento</h3>
+          <p>Email: contato@nextpage.com</p>
+          <p>Telefone: (11) 99999-9999</p>
+        </div>
+      </div>
+
+      <div class="rodape-final">
+        © 2026 NextPage Livraria - Todos os direitos reservados.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

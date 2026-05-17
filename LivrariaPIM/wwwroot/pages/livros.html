@@ -1,300 +1,299 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Livros | NextPage</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/livros.css">
 </head>
-
 <body>
-
   <header>
-
     <div class="container barra-navegacao">
-
-      <div class="logo-livraria">
+      <a class="logo-livraria" href="index.html">
         Next<span>Page</span>
-      </div>
+      </a>
 
-      <div class="caixa-pesquisa">
-        <input type="text" placeholder="Pesquise livros, autores e categorias...">
-        <button>Buscar</button>
-      </div>
+      <form class="caixa-pesquisa">
+        <input type="search" placeholder="Pesquise livros, autores e categorias..." aria-label="Pesquisar livros">
+        <button type="submit">Buscar</button>
+      </form>
 
       <nav class="menu-navegacao">
         <a href="index.html">Início</a>
-        <a href="livros.html">Livros</a>
-        <a href="#">Categorias</a>
-        <a href="#">Login</a>
+        <a href="livros.html" class="pagina-ativa">Livros</a>
+        <a href="index.html#categorias">Categorias</a>
         <a href="#">Carrinho</a>
+        <a href="#" class="link-login">Login</a>
       </nav>
-
     </div>
-
   </header>
 
-  <main class="container">
-
+  <main class="container pagina-livros">
     <section class="topo-catalogo">
-
-      <h1>Todos os Livros</h1>
-
+      <span>Catálogo completo</span>
+      <h1>Todos os livros</h1>
       <p>
-        Explore nossa coleção completa de livros de programação, tecnologia,
-        desenvolvimento pessoal, ficção e muito mais.
+        Explore nossa coleção completa de livros sobre programação, tecnologia,
+        desenvolvimento pessoal, ficção, negócios e muito mais.
       </p>
-
     </section>
 
-    <section class="filtros-livros">
-
-      <button>Todos</button>
-      <button>Programação</button>
-      <button>Tecnologia</button>
-      <button>Ficção</button>
-      <button>Negócios</button>
-      <button>Romance</button>
-
+    <section class="filtros-livros" aria-label="Filtros de livros">
+      <button class="ativo" type="button">Todos</button>
+      <button type="button">Programação</button>
+      <button type="button">Front-end</button>
+      <button type="button">Back-end</button>
+      <button type="button">Python</button>
+      <button type="button">Ficção</button>
+      <button type="button">Negócios</button>
+      <button type="button">Romance</button>
     </section>
 
-    <section class="grade-livros">
-
-      <div class="card-livro">
-        <img src="assets/img/clean-code.jpg" alt="Livro Código Limpo">
+    <section class="grade-livros catalogo-livros">
+      <article class="card-livro">
+        <span class="badge-livro">Mais vendido</span>
+        <img src="assets/img/clean-code.jpg" alt="Capa do livro Clean Code">
 
         <div class="informacoes-livro">
-          <span>Programação</span>
-          <h3>Código Limpo</h3>
+          <span class="categoria-livro">Programação</span>
+          <h3>Clean Code</h3>
+          <p class="autor-livro">Robert C. Martin</p>
+          <div class="avaliacao-card">★★★★★ <span>(245)</span></div>
           <span class="preco-livro">R$ 79,90</span>
-          <button>Adicionar ao Carrinho</button>
+          <button type="button">Adicionar ao carrinho</button>
         </div>
-      </div>
+      </article>
 
-      <div class="card-livro">
-        <img src="assets/img/algoritmos.jpg" alt="Livro Entendendo Algoritmos">
+      <article class="card-livro">
+        <span class="badge-livro">Popular</span>
+        <img src="assets/img/algoritmos.jpg" alt="Capa do livro Entendendo Algoritmos">
 
         <div class="informacoes-livro">
-          <span>Tecnologia</span>
+          <span class="categoria-livro">Tecnologia</span>
           <h3>Entendendo Algoritmos</h3>
+          <p class="autor-livro">Aditya Bhargava</p>
+          <div class="avaliacao-card">★★★★★ <span>(198)</span></div>
           <span class="preco-livro">R$ 64,90</span>
-          <button>Adicionar ao Carrinho</button>
+          <button type="button">Adicionar ao carrinho</button>
         </div>
-      </div>
+      </article>
 
-      <div class="card-livro">
-        <img src="assets/img/python-fluente.jpg" alt="Livro Python Fluente">
+      <article class="card-livro">
+        <span class="badge-livro">Novo</span>
+        <img src="assets/img/python-fluente.jpg" alt="Capa do livro Python Fluente">
 
         <div class="informacoes-livro">
-          <span>Desenvolvimento</span>
+          <span class="categoria-livro">Python</span>
           <h3>Python Fluente</h3>
+          <p class="autor-livro">Luciano Ramalho</p>
+          <div class="avaliacao-card">★★★★★ <span>(176)</span></div>
           <span class="preco-livro">R$ 89,90</span>
-          <button>Adicionar ao Carrinho</button>
+          <button type="button">Adicionar ao carrinho</button>
         </div>
-      </div>
+      </article>
 
-      <div class="card-livro">
-        <img src="assets/img/arquitetura-limpa.jpg" alt="Livro Arquitetura Limpa">
+      <article class="card-livro">
+        <span class="badge-livro">Destaque</span>
+        <img src="assets/img/arquitetura-limpa.jpg" alt="Capa do livro Arquitetura Limpa">
 
         <div class="informacoes-livro">
-          <span>Back-End</span>
+          <span class="categoria-livro">Back-end</span>
           <h3>Arquitetura Limpa</h3>
+          <p class="autor-livro">Robert C. Martin</p>
+          <div class="avaliacao-card">★★★★★ <span>(221)</span></div>
           <span class="preco-livro">R$ 72,90</span>
-          <button>Adicionar ao Carrinho</button>
+          <button type="button">Adicionar ao carrinho</button>
         </div>
-      </div>
+      </article>
 
-      <div class="card-livro">
-        <img src="assets/img/habitos-atomicos.png" alt="Livro Hábitos Atômicos">
+      <article class="card-livro">
+        <img src="assets/img/habitos-atomicos.png" alt="Capa do livro Hábitos Atômicos">
 
         <div class="informacoes-livro">
-          <span>Desenvolvimento Pessoal</span>
+          <span class="categoria-livro">Desenvolvimento pessoal</span>
           <h3>Hábitos Atômicos</h3>
+          <p class="autor-livro">James Clear</p>
+          <div class="avaliacao-card">★★★★★ <span>(310)</span></div>
           <span class="preco-livro">R$ 59,90</span>
-          <button>Adicionar ao Carrinho</button>
+          <button type="button">Adicionar ao carrinho</button>
         </div>
-      </div>
+      </article>
 
-      <div class="card-livro">
-        <img src="assets/img/o-hobbit.png" alt="Livro O Hobbit">
+      <article class="card-livro">
+        <img src="assets/img/o-hobbit.png" alt="Capa do livro O Hobbit">
 
         <div class="informacoes-livro">
-          <span>Ficção</span>
+          <span class="categoria-livro">Fantasia</span>
           <h3>O Hobbit</h3>
+          <p class="autor-livro">J.R.R. Tolkien</p>
+          <div class="avaliacao-card">★★★★★ <span>(287)</span></div>
           <span class="preco-livro">R$ 49,90</span>
-          <button>Adicionar ao Carrinho</button>
+          <button type="button">Adicionar ao carrinho</button>
         </div>
-      </div>
+      </article>
 
-      <div class="card-livro">
-        <img src="assets/img/pai-rico-pai-pobre.png" alt="Livro Pai Rico Pai Pobre">
+      <article class="card-livro">
+        <img src="assets/img/pai-rico-pai-pobre.png" alt="Capa do livro Pai Rico Pai Pobre">
 
         <div class="informacoes-livro">
-          <span>Negócios</span>
+          <span class="categoria-livro">Negócios</span>
           <h3>Pai Rico Pai Pobre</h3>
+          <p class="autor-livro">Robert Kiyosaki</p>
+          <div class="avaliacao-card">★★★★★ <span>(192)</span></div>
           <span class="preco-livro">R$ 39,90</span>
-          <button>Adicionar ao Carrinho</button>
+          <button type="button">Adicionar ao carrinho</button>
         </div>
-      </div>
+      </article>
 
-      <div class="card-livro">
-        <img src="assets/img/dom-casmurro.jpg" alt="Livro Dom Casmurro">
+      <article class="card-livro">
+        <img src="assets/img/dom-casmurro.jpg" alt="Capa do livro Dom Casmurro">
 
         <div class="informacoes-livro">
-          <span>Romance</span>
+          <span class="categoria-livro">Romance</span>
           <h3>Dom Casmurro</h3>
+          <p class="autor-livro">Machado de Assis</p>
+          <div class="avaliacao-card">★★★★★ <span>(144)</span></div>
           <span class="preco-livro">R$ 29,90</span>
-          <button>Adicionar ao Carrinho</button>
+          <button type="button">Adicionar ao carrinho</button>
         </div>
-      </div>
+      </article>
 
-      <div class="card-livro">
-        <img src="assets/img/programador-pragmatico.jpg" alt="Livro O Programador Pragmático">
+      <article class="card-livro">
+        <img src="assets/img/1984.jpg" alt="Capa do livro 1984">
 
         <div class="informacoes-livro">
-          <span>Programação</span>
-          <h3>O Programador Pragmático</h3>
-          <span class="preco-livro">R$ 84,90</span>
-          <button>Adicionar ao Carrinho</button>
-        </div>
-      </div>
-
-      <div class="card-livro">
-        <img src="assets/img/javascript-definitivo.jpg" alt="Livro JavaScript Definitivo">
-
-        <div class="informacoes-livro">
-          <span>Front-End</span>
-          <h3>JavaScript Definitivo</h3>
-          <span class="preco-livro">R$ 94,90</span>
-          <button>Adicionar ao Carrinho</button>
-        </div>
-      </div>
-
-      <div class="card-livro">
-        <img src="assets/img/essencialismo.jpg" alt="Livro Essencialismo">
-
-        <div class="informacoes-livro">
-          <span>Produtividade</span>
-          <h3>Essencialismo</h3>
-          <span class="preco-livro">R$ 44,90</span>
-          <button>Adicionar ao Carrinho</button>
-        </div>
-      </div>
-
-      <div class="card-livro">
-        <img src="assets/img/1984.jpg" alt="Livro 1984">
-
-        <div class="informacoes-livro">
-          <span>Ficção</span>
+          <span class="categoria-livro">Ficção</span>
           <h3>1984</h3>
+          <p class="autor-livro">George Orwell</p>
+          <div class="avaliacao-card">★★★★★ <span>(187)</span></div>
           <span class="preco-livro">R$ 34,90</span>
-          <button>Adicionar ao Carrinho</button>
+          <button type="button">Adicionar ao carrinho</button>
         </div>
-      </div>
+      </article>
 
-      <div class="card-livro">
-        <img src="assets/img/harry-potter.jpg" alt="Livro Harry Potter">
+      <article class="card-livro">
+        <img src="assets/img/essencialismo.jpg" alt="Capa do livro Essencialismo">
 
         <div class="informacoes-livro">
-          <span>Fantasia</span>
+          <span class="categoria-livro">Produtividade</span>
+          <h3>Essencialismo</h3>
+          <p class="autor-livro">Greg McKeown</p>
+          <div class="avaliacao-card">★★★★★ <span>(165)</span></div>
+          <span class="preco-livro">R$ 44,90</span>
+          <button type="button">Adicionar ao carrinho</button>
+        </div>
+      </article>
+
+      <article class="card-livro">
+        <span class="badge-livro">Front-end</span>
+        <img src="assets/img/javascript-definitivo.jpg" alt="Capa do livro JavaScript Definitivo">
+
+        <div class="informacoes-livro">
+          <span class="categoria-livro">Front-end</span>
+          <h3>JavaScript Definitivo</h3>
+          <p class="autor-livro">David Flanagan</p>
+          <div class="avaliacao-card">★★★★★ <span>(204)</span></div>
+          <span class="preco-livro">R$ 94,90</span>
+          <button type="button">Adicionar ao carrinho</button>
+        </div>
+      </article>
+
+      <article class="card-livro">
+        <span class="badge-livro">Destaque</span>
+        <img src="assets/img/programador-pragmatico.jpg" alt="Capa do livro O Programador Pragmático">
+
+        <div class="informacoes-livro">
+          <span class="categoria-livro">Programação</span>
+          <h3>O Programador Pragmático</h3>
+          <p class="autor-livro">Andrew Hunt</p>
+          <div class="avaliacao-card">★★★★★ <span>(212)</span></div>
+          <span class="preco-livro">R$ 84,90</span>
+          <button type="button">Adicionar ao carrinho</button>
+        </div>
+      </article>
+
+      <article class="card-livro">
+        <img src="assets/img/harry-potter.jpg" alt="Capa do livro Harry Potter">
+
+        <div class="informacoes-livro">
+          <span class="categoria-livro">Fantasia</span>
           <h3>Harry Potter</h3>
+          <p class="autor-livro">J.K. Rowling</p>
+          <div class="avaliacao-card">★★★★★ <span>(340)</span></div>
           <span class="preco-livro">R$ 69,90</span>
-          <button>Adicionar ao Carrinho</button>
+          <button type="button">Adicionar ao carrinho</button>
         </div>
-      </div>
+      </article>
 
-      <div class="card-livro">
-        <img src="assets/img/homem-rico-babilonia.jpg" alt="Livro O Homem Mais Rico da Babilônia">
+      <article class="card-livro">
+        <img src="assets/img/homem-rico-babilonia.jpg" alt="Capa do livro O Homem Mais Rico da Babilônia">
 
         <div class="informacoes-livro">
-          <span>Finanças</span>
+          <span class="categoria-livro">Finanças</span>
           <h3>O Homem Mais Rico da Babilônia</h3>
+          <p class="autor-livro">George S. Clason</p>
+          <div class="avaliacao-card">★★★★★ <span>(173)</span></div>
           <span class="preco-livro">R$ 32,90</span>
-          <button>Adicionar ao Carrinho</button>
+          <button type="button">Adicionar ao carrinho</button>
         </div>
-      </div>
+      </article>
 
-      <div class="card-livro">
-        <img src="assets/img/orgulho-preconceito.jpg" alt="Livro Orgulho e Preconceito">
+      <article class="card-livro">
+        <img src="assets/img/orgulho-preconceito.jpg" alt="Capa do livro Orgulho e Preconceito">
 
         <div class="informacoes-livro">
-          <span>Romance</span>
+          <span class="categoria-livro">Romance</span>
           <h3>Orgulho e Preconceito</h3>
+          <p class="autor-livro">Jane Austen</p>
+          <div class="avaliacao-card">★★★★★ <span>(201)</span></div>
           <span class="preco-livro">R$ 42,90</span>
-          <button>Adicionar ao Carrinho</button>
+          <button type="button">Adicionar ao carrinho</button>
         </div>
-      </div>
-
+      </article>
     </section>
-
   </main>
 
   <footer>
-
     <div class="container">
-
       <div class="conteudo-rodape">
-
-        <div class="coluna-rodape">
-
+        <div class="coluna-rodape coluna-principal">
           <h3>NextPage</h3>
-
           <p>
             Sua livraria online moderna com os melhores livros para aprendizado,
             entretenimento e desenvolvimento pessoal.
           </p>
-
         </div>
 
         <div class="coluna-rodape">
-
           <h3>Institucional</h3>
-
-          <a href="#">Sobre Nós</a>
+          <a href="#">Sobre nós</a>
           <a href="#">Contato</a>
-          <a href="#">Termos de Uso</a>
-
+          <a href="#">Termos de uso</a>
         </div>
 
         <div class="coluna-rodape">
-
           <h3>Categorias</h3>
-
           <a href="#">Programação</a>
           <a href="#">Tecnologia</a>
           <a href="#">Ficção</a>
-
         </div>
 
         <div class="coluna-rodape">
-
           <h3>Atendimento</h3>
-
           <p>Email: contato@nextpage.com</p>
           <p>Telefone: (11) 99999-9999</p>
-
         </div>
-
       </div>
 
       <div class="rodape-final">
         © 2026 NextPage Livraria - Todos os direitos reservados.
       </div>
-
     </div>
-
   </footer>
-
 </body>
-
 </html>
