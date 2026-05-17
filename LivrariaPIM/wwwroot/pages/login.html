@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | NextPage</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="container barra-navegacao">
+
+      <a class="logo-livraria" href="index.html">
+        Next<span>Page</span>
+      </a>
+
+      <form class="caixa-pesquisa">
+        <input type="search" placeholder="Pesquise livros, autores e categorias..." aria-label="Pesquisar livros">
+        <button type="submit">Buscar</button>
+      </form>
+
+      <nav class="menu-navegacao">
+        <a href="index.html">Início</a>
+        <a href="livros.html">Livros</a>
+        <a href="index.html#categorias">Categorias</a>
+        <a href="carrinho.html">Carrinho</a>
+        <a href="login.html" class="link-login pagina-ativa">Login</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="container pagina-login">
+
+    <section class="layout-acesso layout-simples">
+
+      <div class="painel-formulario">
+
+        <div class="cabecalho-formulario">
+          <span>Área do cliente</span>
+          <h2>Login</h2>
+          <p>Use seu e-mail e senha cadastrados para continuar.</p>
+        </div>
+
+        <form class="formulario-acesso">
+
+          <div class="campo-formulario">
+            <label for="email-login">E-mail</label>
+            <input id="email-login" type="email" placeholder="seuemail@exemplo.com">
+          </div>
+
+          <div class="campo-formulario">
+            <label for="senha-login">Senha</label>
+            <input id="senha-login" type="password" placeholder="Digite sua senha">
+          </div>
+
+          <div class="linha-opcoes">
+            <label class="lembrar-acesso">
+              <input type="checkbox">
+              <span>Lembrar meu acesso</span>
+            </label>
+
+            <a href="#">Esqueci minha senha</a>
+          </div>
+
+          <button type="submit">Entrar</button>
+
+        </form>
+
+        <div class="chamada-cadastro">
+          <p>Ainda não tem uma conta?</p>
+          <a href="cadastro.html">Criar conta grátis</a>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+
+      <div class="conteudo-rodape">
+
+        <div class="coluna-rodape coluna-principal">
+          <h3>NextPage</h3>
+          <p>
+            Sua livraria online moderna com os melhores livros para aprendizado,
+            entretenimento e desenvolvimento pessoal.
+          </p>
+        </div>
+
+        <div class="coluna-rodape">
+          <h3>Institucional</h3>
+          <a href="#">Sobre nós</a>
+          <a href="#">Contato</a>
+          <a href="#">Termos de uso</a>
+        </div>
+
+        <div class="coluna-rodape">
+          <h3>Categorias</h3>
+          <a href="#">Programação</a>
+          <a href="#">Tecnologia</a>
+          <a href="#">Ficção</a>
+        </div>
+
+        <div class="coluna-rodape">
+          <h3>Atendimento</h3>
+          <p>Email: contato@nextpage.com</p>
+          <p>Telefone: (11) 99999-9999</p>
+        </div>
+
+      </div>
+
+      <div class="rodape-final">
+        © 2026 NextPage Livraria - Todos os direitos reservados.
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>

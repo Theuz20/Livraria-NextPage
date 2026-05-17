@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro | NextPage</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="container barra-navegacao">
+
+      <a class="logo-livraria" href="index.html">
+        Next<span>Page</span>
+      </a>
+
+      <form class="caixa-pesquisa">
+        <input type="search" placeholder="Pesquise livros, autores e categorias..." aria-label="Pesquisar livros">
+        <button type="submit">Buscar</button>
+      </form>
+
+      <nav class="menu-navegacao">
+        <a href="index.html">Início</a>
+        <a href="livros.html">Livros</a>
+        <a href="index.html#categorias">Categorias</a>
+        <a href="carrinho.html">Carrinho</a>
+        <a href="login.html" class="link-login">Login</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="container pagina-login">
+
+    <section class="layout-acesso layout-simples layout-cadastro-simples">
+
+      <div class="painel-formulario painel-formulario-grande">
+
+        <div class="cabecalho-formulario">
+          <span>Novo cliente</span>
+          <h2>Dados da conta</h2>
+          <p>Preencha os campos abaixo para criar seu acesso à NextPage.</p>
+        </div>
+
+        <form class="formulario-acesso">
+
+          <div class="grade-campos">
+            <div class="campo-formulario">
+              <label for="nome-cadastro">Nome</label>
+              <input id="nome-cadastro" type="text" placeholder="Seu nome">
+            </div>
+
+            <div class="campo-formulario">
+              <label for="sobrenome-cadastro">Sobrenome</label>
+              <input id="sobrenome-cadastro" type="text" placeholder="Seu sobrenome">
+            </div>
+          </div>
+
+          <div class="campo-formulario">
+            <label for="email-cadastro">E-mail</label>
+            <input id="email-cadastro" type="email" placeholder="seuemail@exemplo.com">
+          </div>
+
+          <div class="grade-campos">
+            <div class="campo-formulario">
+              <label for="telefone-cadastro">Telefone</label>
+              <input id="telefone-cadastro" type="tel" placeholder="(11) 99999-9999">
+            </div>
+
+            <div class="campo-formulario">
+              <label for="cpf-cadastro">CPF</label>
+              <input id="cpf-cadastro" type="text" placeholder="000.000.000-00">
+            </div>
+          </div>
+
+          <div class="grade-campos">
+            <div class="campo-formulario">
+              <label for="senha-cadastro">Senha</label>
+              <input id="senha-cadastro" type="password" placeholder="Crie uma senha">
+            </div>
+
+            <div class="campo-formulario">
+              <label for="confirmar-senha">Confirmar senha</label>
+              <input id="confirmar-senha" type="password" placeholder="Repita a senha">
+            </div>
+          </div>
+
+          <label class="termos-cadastro">
+            <input type="checkbox">
+            <span>Aceito receber novidades, ofertas e recomendações da NextPage.</span>
+          </label>
+
+          <button type="submit">Criar minha conta</button>
+
+        </form>
+
+        <div class="chamada-cadastro">
+          <p>Já tem cadastro?</p>
+          <a href="login.html">Entrar na minha conta</a>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+
+      <div class="conteudo-rodape">
+
+        <div class="coluna-rodape coluna-principal">
+          <h3>NextPage</h3>
+          <p>
+            Sua livraria online moderna com os melhores livros para aprendizado,
+            entretenimento e desenvolvimento pessoal.
+          </p>
+        </div>
+
+        <div class="coluna-rodape">
+          <h3>Institucional</h3>
+          <a href="#">Sobre nós</a>
+          <a href="#">Contato</a>
+          <a href="#">Termos de uso</a>
+        </div>
+
+        <div class="coluna-rodape">
+          <h3>Categorias</h3>
+          <a href="#">Programação</a>
+          <a href="#">Tecnologia</a>
+          <a href="#">Ficção</a>
+        </div>
+
+        <div class="coluna-rodape">
+          <h3>Atendimento</h3>
+          <p>Email: contato@nextpage.com</p>
+          <p>Telefone: (11) 99999-9999</p>
+        </div>
+
+      </div>
+
+      <div class="rodape-final">
+        © 2026 NextPage Livraria - Todos os direitos reservados.
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
