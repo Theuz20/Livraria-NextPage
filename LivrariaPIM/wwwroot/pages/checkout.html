@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | NextPage</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/checkout.css">
+</head>
+<body>
+  <header>
+    <div class="container barra-navegacao">
+      <a class="logo-livraria" href="index.html">
+        Next<span>Page</span>
+      </a>
+
+      <form class="caixa-pesquisa">
+        <input type="search" placeholder="Pesquise livros, autores e categorias..." aria-label="Pesquisar livros">
+        <button type="submit">Buscar</button>
+      </form>
+
+      <nav class="menu-navegacao">
+        <a href="index.html">Início</a>
+        <a href="livros.html">Livros</a>
+        <a href="categorias.html">Categorias</a>
+        <a href="carrinho.html">Carrinho</a>
+        <a href="login.html" class="link-login">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container pagina-checkout">
+    <section class="topo-checkout">
+      <div>
+        <span>Finalização</span>
+        <h1>Checkout</h1>
+        <p>Confirme seus dados, escolha a entrega e finalize seu pedido com segurança.</p>
+      </div>
+
+      <a href="carrinho.html">Voltar ao carrinho</a>
+    </section>
+
+    <section class="etapas-checkout" aria-label="Etapas da compra">
+      <div class="etapa concluida">
+        <strong>1</strong>
+        <span>Carrinho</span>
+      </div>
+
+      <div class="etapa ativa">
+        <strong>2</strong>
+        <span>Entrega</span>
+      </div>
+
+      <div class="etapa">
+        <strong>3</strong>
+        <span>Pagamento</span>
+      </div>
+    </section>
+
+    <section class="layout-checkout">
+      <div class="formularios-checkout">
+        <section class="bloco-checkout">
+          <div class="cabecalho-bloco">
+            <span>Dados pessoais</span>
+            <h2>Quem vai receber?</h2>
+          </div>
+
+          <form class="formulario-checkout">
+            <div class="grade-campos">
+              <div class="campo-formulario">
+                <label for="nome">Nome completo</label>
+                <input id="nome" type="text" placeholder="Seu nome completo">
+              </div>
+
+              <div class="campo-formulario">
+                <label for="email">E-mail</label>
+                <input id="email" type="email" placeholder="seuemail@exemplo.com">
+              </div>
+            </div>
+
+            <div class="grade-campos">
+              <div class="campo-formulario">
+                <label for="telefone">Telefone</label>
+                <input id="telefone" type="tel" placeholder="(11) 99999-9999">
+              </div>
+
+              <div class="campo-formulario">
+                <label for="cpf">CPF</label>
+                <input id="cpf" type="text" placeholder="000.000.000-00">
+              </div>
+            </div>
+          </form>
+        </section>
+
+        <section class="bloco-checkout">
+          <div class="cabecalho-bloco">
+            <span>Endereço</span>
+            <h2>Entrega</h2>
+          </div>
+
+          <form class="formulario-checkout">
+            <div class="grade-campos grade-endereco">
+              <div class="campo-formulario">
+                <label for="cep">CEP</label>
+                <input id="cep" type="text" placeholder="00000-000">
+              </div>
+
+              <div class="campo-formulario campo-maior">
+                <label for="rua">Rua</label>
+                <input id="rua" type="text" placeholder="Nome da rua">
+              </div>
+            </div>
+
+            <div class="grade-campos">
+              <div class="campo-formulario">
+                <label for="numero">Número</label>
+                <input id="numero" type="text" placeholder="123">
+              </div>
+
+              <div class="campo-formulario">
+                <label for="complemento">Complemento</label>
+                <input id="complemento" type="text" placeholder="Apartamento, bloco...">
+              </div>
+            </div>
+
+            <div class="grade-campos">
+              <div class="campo-formulario">
+                <label for="bairro">Bairro</label>
+                <input id="bairro" type="text" placeholder="Seu bairro">
+              </div>
+
+              <div class="campo-formulario">
+                <label for="cidade">Cidade</label>
+                <input id="cidade" type="text" placeholder="Sua cidade">
+              </div>
+            </div>
+          </form>
+
+          <div class="opcoes-entrega">
+            <label class="opcao-entrega ativa">
+              <input type="radio" name="entrega" checked>
+              <span>
+                <strong>Entrega padrão</strong>
+                <small>Receba em até 5 dias úteis</small>
+              </span>
+              <b>R$ 12,90</b>
+            </label>
+
+            <label class="opcao-entrega">
+              <input type="radio" name="entrega">
+              <span>
+                <strong>Entrega expressa</strong>
+                <small>Receba em até 2 dias úteis</small>
+              </span>
+              <b>R$ 24,90</b>
+            </label>
+          </div>
+        </section>
+
+        <section class="bloco-checkout">
+          <div class="cabecalho-bloco">
+            <span>Pagamento</span>
+            <h2>Como deseja pagar?</h2>
+          </div>
+
+          <div class="metodos-pagamento">
+            <label class="metodo-pagamento ativo">
+              <input type="radio" name="pagamento" checked>
+              <span>Cartão de crédito</span>
+            </label>
+
+            <label class="metodo-pagamento">
+              <input type="radio" name="pagamento">
+              <span>Pix</span>
+            </label>
+
+            <label class="metodo-pagamento">
+              <input type="radio" name="pagamento">
+              <span>Boleto</span>
+            </label>
+          </div>
+
+          <form class="formulario-checkout">
+            <div class="campo-formulario">
+              <label for="cartao">Número do cartão</label>
+              <input id="cartao" type="text" placeholder="0000 0000 0000 0000">
+            </div>
+
+            <div class="grade-campos">
+              <div class="campo-formulario">
+                <label for="validade">Validade</label>
+                <input id="validade" type="text" placeholder="MM/AA">
+              </div>
+
+              <div class="campo-formulario">
+                <label for="cvv">CVV</label>
+                <input id="cvv" type="text" placeholder="123">
+              </div>
+            </div>
+
+            <div class="campo-formulario">
+              <label for="titular">Nome impresso no cartão</label>
+              <input id="titular" type="text" placeholder="Nome do titular">
+            </div>
+          </form>
+        </section>
+      </div>
+
+      <aside class="resumo-checkout">
+        <h2>Resumo do pedido</h2>
+
+        <div class="item-resumo">
+          <img src="assets/img/clean-code.jpg" alt="Capa do livro Clean Code">
+          <div>
+            <strong>Clean Code</strong>
+            <span>1 unidade</span>
+          </div>
+          <b>R$ 79,90</b>
+        </div>
+
+        <div class="item-resumo">
+          <img src="assets/img/python-fluente.jpg" alt="Capa do livro Python Fluente">
+          <div>
+            <strong>Python Fluente</strong>
+            <span>1 unidade</span>
+          </div>
+          <b>R$ 89,90</b>
+        </div>
+
+        <div class="item-resumo">
+          <img src="assets/img/algoritmos.jpg" alt="Capa do livro Entendendo Algoritmos">
+          <div>
+            <strong>Entendendo Algoritmos</strong>
+            <span>1 unidade</span>
+          </div>
+          <b>R$ 64,90</b>
+        </div>
+
+        <div class="linhas-resumo">
+          <div>
+            <span>Subtotal</span>
+            <strong>R$ 234,70</strong>
+          </div>
+
+          <div>
+            <span>Frete</span>
+            <strong>R$ 12,90</strong>
+          </div>
+
+          <div>
+            <span>Desconto</span>
+            <strong>- R$ 0,00</strong>
+          </div>
+        </div>
+
+        <div class="total-checkout">
+          <span>Total</span>
+          <strong>R$ 247,60</strong>
+        </div>
+
+        <a class="botao-confirmar-pedido" href="pedido-confirmado.html">Confirmar pedido</a>
+
+        <p class="mensagem-segura">Pagamento protegido e dados criptografados.</p>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="conteudo-rodape">
+        <div class="coluna-rodape coluna-principal">
+          <h3>NextPage</h3>
+          <p>
+            Sua livraria online moderna com os melhores livros para aprendizado,
+            entretenimento e desenvolvimento pessoal.
+          </p>
+        </div>
+
+        <div class="coluna-rodape">
+          <h3>Institucional</h3>
+          <a href="#">Sobre nós</a>
+          <a href="contato.html">Contato</a>
+          <a href="#">Termos de uso</a>
+        </div>
+
+        <div class="coluna-rodape">
+          <h3>Categorias</h3>
+          <a href="#">Programação</a>
+          <a href="#">Tecnologia</a>
+          <a href="#">Ficção</a>
+        </div>
+
+        <div class="coluna-rodape">
+          <h3>Atendimento</h3>
+          <p>Email: contato@nextpage.com</p>
+          <p>Telefone: (11) 99999-9999</p>
+        </div>
+      </div>
+
+      <div class="rodape-final">
+        © 2026 NextPage Livraria - Todos os direitos reservados.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

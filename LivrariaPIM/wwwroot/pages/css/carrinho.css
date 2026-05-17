@@ -326,7 +326,11 @@
   line-height: 1;
 }
 
-.resumo-pedido > button {
+.resumo-pedido > button,
+.botao-finalizar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   min-height: 52px;
   border: 0;
@@ -337,7 +341,8 @@
   transition: transform 0.25s ease, background-color 0.25s ease;
 }
 
-.resumo-pedido > button:hover {
+.resumo-pedido > button:hover,
+.botao-finalizar:hover {
   transform: translateY(-3px);
   background-color: #1d4ed8;
 }

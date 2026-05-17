@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato | NextPage</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/contato.css">
+</head>
+<body>
+  <header>
+    <div class="container barra-navegacao">
+      <a class="logo-livraria" href="index.html">
+        Next<span>Page</span>
+      </a>
+
+      <form class="caixa-pesquisa">
+        <input type="search" placeholder="Pesquise livros, autores e categorias..." aria-label="Pesquisar livros">
+        <button type="submit">Buscar</button>
+      </form>
+
+      <nav class="menu-navegacao">
+        <a href="index.html">Início</a>
+        <a href="livros.html">Livros</a>
+        <a href="categorias.html">Categorias</a>
+        <a href="carrinho.html">Carrinho</a>
+        <a href="login.html" class="link-login">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container pagina-contato">
+    <section class="topo-contato">
+      <div>
+        <span>Atendimento</span>
+        <h1>Fale com a NextPage</h1>
+        <p>
+          Precisa de ajuda com pedidos, livros, entregas ou cadastro?
+          Envie sua mensagem e nossa equipe retorna o mais rápido possível.
+        </p>
+      </div>
+    </section>
+
+    <section class="layout-contato">
+      <div class="painel-contato">
+        <div class="cabecalho-contato">
+          <span>Mensagem</span>
+          <h2>Envie sua solicitação</h2>
+          <p>Preencha os campos abaixo para entrarmos em contato com você.</p>
+        </div>
+
+        <form class="formulario-contato">
+          <div class="grade-campos-contato">
+            <div class="campo-contato">
+              <label for="nome">Nome</label>
+              <input id="nome" type="text" placeholder="Seu nome completo">
+            </div>
+
+            <div class="campo-contato">
+              <label for="email">E-mail</label>
+              <input id="email" type="email" placeholder="seuemail@exemplo.com">
+            </div>
+          </div>
+
+          <div class="grade-campos-contato">
+            <div class="campo-contato">
+              <label for="telefone">Telefone</label>
+              <input id="telefone" type="tel" placeholder="(11) 99999-9999">
+            </div>
+
+            <div class="campo-contato">
+              <label for="assunto">Assunto</label>
+              <select id="assunto">
+                <option>Pedido</option>
+                <option>Entrega</option>
+                <option>Pagamento</option>
+                <option>Cadastro</option>
+                <option>Outros</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="campo-contato">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" rows="6" placeholder="Conte como podemos ajudar"></textarea>
+          </div>
+
+          <button type="submit">Enviar mensagem</button>
+        </form>
+      </div>
+
+      <aside class="informacoes-contato">
+        <div class="cartao-atendimento">
+          <span>E-mail</span>
+          <strong>contato@nextpage.com</strong>
+          <p>Respondemos em até 1 dia útil.</p>
+        </div>
+
+        <div class="cartao-atendimento">
+          <span>Telefone</span>
+          <strong>(11) 99999-9999</strong>
+          <p>Atendimento de segunda a sexta.</p>
+        </div>
+
+        <div class="cartao-atendimento">
+          <span>Horário</span>
+          <strong>08h às 18h</strong>
+          <p>Exceto feriados nacionais.</p>
+        </div>
+
+        <div class="cartao-atendimento destaque">
+          <span>Pedidos</span>
+          <strong>Tenha o número em mãos</strong>
+          <p>Isso ajuda nossa equipe a localizar sua compra mais rápido.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="duvidas-contato">
+      <div class="titulo-secao">
+        <div>
+          <span>Ajuda rápida</span>
+          <h2>Dúvidas frequentes</h2>
+        </div>
+      </div>
+
+      <div class="grade-duvidas">
+        <article>
+          <h3>Como acompanho meu pedido?</h3>
+          <p>Após a confirmação da compra, você recebe as atualizações por e-mail.</p>
+        </article>
+
+        <article>
+          <h3>Posso trocar um livro?</h3>
+          <p>Sim. A troca pode ser solicitada em até 7 dias após o recebimento.</p>
+        </article>
+
+        <article>
+          <h3>Quais formas de pagamento aceitam?</h3>
+          <p>Aceitamos cartão de crédito, Pix e boleto bancário.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="conteudo-rodape">
+        <div class="coluna-rodape coluna-principal">
+          <h3>NextPage</h3>
+          <p>
+            Sua livraria online moderna com os melhores livros para aprendizado,
+            entretenimento e desenvolvimento pessoal.
+          </p>
+        </div>
+
+        <div class="coluna-rodape">
+          <h3>Institucional</h3>
+          <a href="#">Sobre nós</a>
+          <a href="contato.html">Contato</a>
+          <a href="#">Termos de uso</a>
+        </div>
+
+        <div class="coluna-rodape">
+          <h3>Categorias</h3>
+          <a href="categorias.html">Programação</a>
+          <a href="categorias.html">Tecnologia</a>
+          <a href="categorias.html">Ficção</a>
+        </div>
+
+        <div class="coluna-rodape">
+          <h3>Atendimento</h3>
+          <p>Email: contato@nextpage.com</p>
+          <p>Telefone: (11) 99999-9999</p>
+        </div>
+      </div>
+
+      <div class="rodape-final">
+        © 2026 NextPage Livraria - Todos os direitos reservados.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

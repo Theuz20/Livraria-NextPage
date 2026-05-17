@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categorias | NextPage</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/categorias.css">
+</head>
+<body>
+  <header>
+    <div class="container barra-navegacao">
+      <a class="logo-livraria" href="index.html">
+        Next<span>Page</span>
+      </a>
+
+      <form class="caixa-pesquisa">
+        <input type="search" placeholder="Pesquise livros, autores e categorias..." aria-label="Pesquisar livros">
+        <button type="submit">Buscar</button>
+      </form>
+
+      <nav class="menu-navegacao">
+        <a href="index.html">Início</a>
+        <a href="livros.html">Livros</a>
+        <a href="categorias.html" class="pagina-ativa">Categorias</a>
+        <a href="carrinho.html">Carrinho</a>
+        <a href="login.html" class="link-login">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container pagina-categorias">
+    <section class="topo-categorias">
+      <div>
+        <span>Explore por interesse</span>
+        <h1>Categorias</h1>
+        <p>
+          Encontre livros por área de estudo, estilo de leitura ou objetivo pessoal.
+          Escolha uma categoria e descubra novos títulos para sua estante.
+        </p>
+      </div>
+
+      <a href="livros.html">Ver todos os livros</a>
+    </section>
+
+    <section class="grade-categorias-completa" aria-label="Lista de categorias">
+      <a class="categoria-detalhada categoria-programacao" href="livros.html">
+        <span>01</span>
+        <h2>Programação</h2>
+        <p>Código limpo, lógica, arquitetura e boas práticas para desenvolvimento.</p>
+        <strong>24 livros</strong>
+      </a>
+
+      <a class="categoria-detalhada categoria-front" href="livros.html">
+        <span>02</span>
+        <h2>Front-end</h2>
+        <p>JavaScript, interfaces, experiência do usuário e tecnologias web.</p>
+        <strong>16 livros</strong>
+      </a>
+
+      <a class="categoria-detalhada categoria-back" href="livros.html">
+        <span>03</span>
+        <h2>Back-end</h2>
+        <p>APIs, banco de dados, arquitetura e sistemas escaláveis.</p>
+        <strong>18 livros</strong>
+      </a>
+
+      <a class="categoria-detalhada categoria-python" href="livros.html">
+        <span>04</span>
+        <h2>Python</h2>
+        <p>Automação, dados, scripts, aplicações e desenvolvimento profissional.</p>
+        <strong>12 livros</strong>
+      </a>
+
+      <a class="categoria-detalhada categoria-ficcao" href="livros.html">
+        <span>05</span>
+        <h2>Ficção</h2>
+        <p>Histórias marcantes para imaginar mundos, conflitos e futuros possíveis.</p>
+        <strong>31 livros</strong>
+      </a>
+
+      <a class="categoria-detalhada categoria-romance" href="livros.html">
+        <span>06</span>
+        <h2>Romance</h2>
+        <p>Clássicos e narrativas emocionantes para leituras mais envolventes.</p>
+        <strong>20 livros</strong>
+      </a>
+
+      <a class="categoria-detalhada categoria-negocios" href="livros.html">
+        <span>07</span>
+        <h2>Negócios</h2>
+        <p>Empreendedorismo, gestão, estratégia, vendas e carreira.</p>
+        <strong>22 livros</strong>
+      </a>
+
+      <a class="categoria-detalhada categoria-financas" href="livros.html">
+        <span>08</span>
+        <h2>Finanças</h2>
+        <p>Educação financeira, investimentos e organização do dinheiro.</p>
+        <strong>14 livros</strong>
+      </a>
+    </section>
+
+    <section class="colecoes-categorias">
+      <div class="titulo-secao">
+        <div>
+          <span>Seleções rápidas</span>
+          <h2>Coleções em destaque</h2>
+        </div>
+      </div>
+
+      <div class="grade-colecoes">
+        <article class="colecao-card">
+          <h3>Para começar em programação</h3>
+          <p>Livros para construir uma base forte em lógica, algoritmos e código limpo.</p>
+          <a href="livros.html">Ver seleção</a>
+        </article>
+
+        <article class="colecao-card">
+          <h3>Clássicos para ler este ano</h3>
+          <p>Obras de ficção e romance que continuam relevantes para qualquer leitor.</p>
+          <a href="livros.html">Ver seleção</a>
+        </article>
+
+        <article class="colecao-card">
+          <h3>Carreira e produtividade</h3>
+          <p>Títulos para organizar hábitos, tomar decisões melhores e evoluir no trabalho.</p>
+          <a href="livros.html">Ver seleção</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="livros-por-categoria">
+      <div class="titulo-secao">
+        <div>
+          <span>Mais buscados</span>
+          <h2>Destaques por categoria</h2>
+        </div>
+
+        <a href="livros.html">Ver catálogo</a>
+      </div>
+
+      <div class="grade-livros">
+        <article class="card-livro">
+          <a class="link-livro" href="livro.html">
+            <img src="assets/img/clean-code.jpg" alt="Capa do livro Clean Code">
+          </a>
+
+          <div class="informacoes-livro">
+            <span class="categoria-livro">Programação</span>
+            <a class="link-titulo-livro" href="livro.html">
+              <h3>Clean Code</h3>
+            </a>
+            <p>Robert C. Martin</p>
+            <div class="area-preco">
+              <span class="preco-livro">R$ 79,90</span>
+            </div>
+            <button type="button">Adicionar ao carrinho</button>
+          </div>
+        </article>
+
+        <article class="card-livro">
+          <img src="assets/img/o-hobbit.png" alt="Capa do livro O Hobbit">
+
+          <div class="informacoes-livro">
+            <span class="categoria-livro">Fantasia</span>
+            <h3>O Hobbit</h3>
+            <p>J.R.R. Tolkien</p>
+            <div class="area-preco">
+              <span class="preco-livro">R$ 49,90</span>
+            </div>
+            <button type="button">Adicionar ao carrinho</button>
+          </div>
+        </article>
+
+        <article class="card-livro">
+          <img src="assets/img/pai-rico-pai-pobre.png" alt="Capa do livro Pai Rico Pai Pobre">
+
+          <div class="informacoes-livro">
+            <span class="categoria-livro">Negócios</span>
+            <h3>Pai Rico Pai Pobre</h3>
+            <p>Robert Kiyosaki</p>
+            <div class="area-preco">
+              <span class="preco-livro">R$ 39,90</span>
+            </div>
+            <button type="button">Adicionar ao carrinho</button>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="conteudo-rodape">
+        <div class="coluna-rodape coluna-principal">
+          <h3>NextPage</h3>
+          <p>
+            Sua livraria online moderna com os melhores livros para aprendizado,
+            entretenimento e desenvolvimento pessoal.
+          </p>
+        </div>
+
+        <div class="coluna-rodape">
+          <h3>Institucional</h3>
+          <a href="#">Sobre nós</a>
+          <a href="#">Contato</a>
+          <a href="#">Termos de uso</a>
+        </div>
+
+        <div class="coluna-rodape">
+          <h3>Categorias</h3>
+          <a href="categorias.html">Programação</a>
+          <a href="categorias.html">Tecnologia</a>
+          <a href="categorias.html">Ficção</a>
+        </div>
+
+        <div class="coluna-rodape">
+          <h3>Atendimento</h3>
+          <p>Email: contato@nextpage.com</p>
+          <p>Telefone: (11) 99999-9999</p>
+        </div>
+      </div>
+
+      <div class="rodape-final">
+        © 2026 NextPage Livraria - Todos os direitos reservados.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

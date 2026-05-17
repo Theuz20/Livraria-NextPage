@@ -1,0 +1,250 @@
+.pagina-contato {
+  padding-top: 42px;
+}
+
+.topo-contato {
+  padding: 52px 58px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, var(--azul-escuro), var(--azul-medio));
+  color: var(--branco);
+}
+
+.topo-contato span,
+.cabecalho-contato span {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.topo-contato span {
+  margin-bottom: 12px;
+  color: #bfdbfe;
+}
+
+.topo-contato h1 {
+  margin-bottom: 14px;
+  font-size: clamp(2.35rem, 5vw, 4rem);
+  line-height: 1.05;
+}
+
+.topo-contato p {
+  max-width: 760px;
+  color: #dbeafe;
+  font-size: 1.06rem;
+  line-height: 1.7;
+}
+
+.layout-contato {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 28px;
+  margin-top: 30px;
+  align-items: start;
+}
+
+.painel-contato,
+.cartao-atendimento,
+.grade-duvidas article {
+  border: 1px solid var(--borda);
+  border-radius: 20px;
+  background-color: var(--branco);
+  box-shadow: var(--sombra);
+}
+
+.painel-contato {
+  padding: 30px;
+}
+
+.cabecalho-contato {
+  margin-bottom: 24px;
+}
+
+.cabecalho-contato span {
+  margin-bottom: 8px;
+  color: var(--azul);
+}
+
+.cabecalho-contato h2 {
+  color: var(--azul-escuro);
+  font-size: 1.55rem;
+  line-height: 1.2;
+}
+
+.cabecalho-contato p {
+  margin-top: 8px;
+  color: var(--texto-suave);
+  line-height: 1.6;
+}
+
+.formulario-contato {
+  display: grid;
+  gap: 18px;
+}
+
+.grade-campos-contato {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.campo-contato label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--azul-escuro);
+  font-weight: 800;
+}
+
+.campo-contato input,
+.campo-contato select,
+.campo-contato textarea {
+  width: 100%;
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  background-color: #f8fafc;
+  color: var(--texto);
+  outline: 0;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.campo-contato input,
+.campo-contato select {
+  min-height: 46px;
+  padding: 0 14px;
+}
+
+.campo-contato textarea {
+  min-height: 150px;
+  padding: 14px;
+  resize: vertical;
+}
+
+.campo-contato input::placeholder,
+.campo-contato textarea::placeholder {
+  color: #94a3b8;
+}
+
+.campo-contato input:focus,
+.campo-contato select:focus,
+.campo-contato textarea:focus {
+  border-color: var(--azul);
+  background-color: var(--branco);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+.formulario-contato button {
+  min-height: 50px;
+  border: 0;
+  border-radius: 12px;
+  background-color: var(--azul);
+  color: var(--branco);
+  font-weight: 800;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.formulario-contato button:hover {
+  transform: translateY(-3px);
+  background-color: #1d4ed8;
+}
+
+.informacoes-contato {
+  display: grid;
+  gap: 18px;
+}
+
+.cartao-atendimento {
+  padding: 22px;
+}
+
+.cartao-atendimento span {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--azul);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.cartao-atendimento strong {
+  display: block;
+  color: var(--azul-escuro);
+  font-size: 1.1rem;
+}
+
+.cartao-atendimento p {
+  margin-top: 8px;
+  color: var(--texto-suave);
+  line-height: 1.55;
+}
+
+.cartao-atendimento.destaque {
+  background: linear-gradient(135deg, var(--azul-escuro), var(--azul-medio));
+  color: var(--branco);
+}
+
+.cartao-atendimento.destaque span,
+.cartao-atendimento.destaque p {
+  color: #dbeafe;
+}
+
+.cartao-atendimento.destaque strong {
+  color: var(--branco);
+}
+
+.duvidas-contato {
+  margin-top: 72px;
+}
+
+.grade-duvidas {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.grade-duvidas article {
+  padding: 24px;
+}
+
+.grade-duvidas h3 {
+  color: var(--azul-escuro);
+  font-size: 1.12rem;
+  line-height: 1.3;
+}
+
+.grade-duvidas p {
+  margin-top: 10px;
+  color: var(--texto-suave);
+  line-height: 1.6;
+}
+
+@media (max-width: 980px) {
+  .layout-contato,
+  .grade-duvidas {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .pagina-contato {
+    padding-top: 28px;
+  }
+
+  .topo-contato {
+    padding: 42px 24px;
+    border-radius: 18px;
+  }
+
+  .painel-contato,
+  .cartao-atendimento,
+  .grade-duvidas article {
+    border-radius: 16px;
+  }
+
+  .painel-contato {
+    padding: 24px;
+  }
+
+  .grade-campos-contato {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,291 @@
+.pagina-confirmacao {
+  padding-top: 42px;
+}
+
+.cartao-confirmacao {
+  padding: 58px 40px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, var(--azul-escuro), var(--azul-medio));
+  color: var(--branco);
+  text-align: center;
+  box-shadow: var(--sombra);
+}
+
+.icone-confirmacao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  background-color: var(--branco);
+  color: var(--azul);
+  font-size: 2.4rem;
+  font-weight: 800;
+}
+
+.cartao-confirmacao > span,
+.cabecalho-confirmacao span {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.cartao-confirmacao > span {
+  margin-bottom: 12px;
+  color: #bfdbfe;
+}
+
+.cartao-confirmacao h1 {
+  margin-bottom: 16px;
+  font-size: clamp(2.25rem, 5vw, 3.8rem);
+  line-height: 1.05;
+}
+
+.cartao-confirmacao p {
+  max-width: 720px;
+  margin: 0 auto;
+  color: #dbeafe;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.acoes-confirmacao {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.botao-principal,
+.botao-secundario-confirmacao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 22px;
+  border-radius: 12px;
+  font-weight: 800;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.botao-principal {
+  background-color: var(--branco);
+  color: var(--azul);
+}
+
+.botao-secundario-confirmacao {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--branco);
+}
+
+.botao-principal:hover,
+.botao-secundario-confirmacao:hover {
+  transform: translateY(-3px);
+}
+
+.botao-principal:hover {
+  background-color: #eff6ff;
+}
+
+.botao-secundario-confirmacao:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.grade-confirmacao {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.detalhes-pedido,
+.status-pedido,
+.livros-confirmados {
+  border: 1px solid var(--borda);
+  border-radius: 20px;
+  background-color: var(--branco);
+  box-shadow: var(--sombra);
+}
+
+.detalhes-pedido,
+.status-pedido,
+.livros-confirmados {
+  padding: 28px;
+}
+
+.cabecalho-confirmacao {
+  margin-bottom: 22px;
+}
+
+.cabecalho-confirmacao span {
+  margin-bottom: 8px;
+  color: var(--azul);
+}
+
+.cabecalho-confirmacao h2 {
+  color: var(--azul-escuro);
+  font-size: 1.45rem;
+  line-height: 1.2;
+}
+
+.detalhes-pedido dl {
+  display: grid;
+  gap: 14px;
+}
+
+.detalhes-pedido dl div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--borda);
+}
+
+.detalhes-pedido dl div:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.detalhes-pedido dt {
+  color: var(--texto-suave);
+  font-weight: 700;
+}
+
+.detalhes-pedido dd {
+  color: var(--azul-escuro);
+  font-weight: 800;
+  text-align: right;
+}
+
+.linha-status {
+  display: grid;
+  gap: 16px;
+}
+
+.status {
+  position: relative;
+  padding-left: 32px;
+}
+
+.status::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border: 3px solid #bfdbfe;
+  border-radius: 50%;
+  background-color: var(--branco);
+}
+
+.status.ativo::before {
+  border-color: var(--azul);
+  background-color: var(--azul);
+}
+
+.status strong {
+  display: block;
+  color: var(--azul-escuro);
+  font-size: 1rem;
+}
+
+.status span {
+  display: block;
+  margin-top: 4px;
+  color: var(--texto-suave);
+  font-weight: 600;
+}
+
+.livros-confirmados {
+  margin-top: 28px;
+}
+
+.lista-livros-confirmados {
+  display: grid;
+  gap: 16px;
+}
+
+.lista-livros-confirmados article {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid var(--borda);
+  border-radius: 16px;
+  background-color: #f8fafc;
+}
+
+.lista-livros-confirmados img {
+  width: 64px;
+  height: 84px;
+  padding: 6px;
+  border-radius: 10px;
+  background-color: #eff6ff;
+  object-fit: contain;
+}
+
+.lista-livros-confirmados h3 {
+  color: var(--azul-escuro);
+  font-size: 1.05rem;
+  line-height: 1.3;
+}
+
+.lista-livros-confirmados p {
+  margin-top: 4px;
+  color: var(--texto-suave);
+  font-weight: 600;
+}
+
+.lista-livros-confirmados strong {
+  color: var(--azul);
+  font-size: 1.05rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .grade-confirmacao {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .pagina-confirmacao {
+    padding-top: 28px;
+  }
+
+  .cartao-confirmacao {
+    padding: 42px 24px;
+    border-radius: 18px;
+  }
+
+  .acoes-confirmacao {
+    flex-direction: column;
+  }
+
+  .botao-principal,
+  .botao-secundario-confirmacao {
+    width: 100%;
+  }
+
+  .detalhes-pedido,
+  .status-pedido,
+  .livros-confirmados {
+    padding: 22px;
+    border-radius: 16px;
+  }
+
+  .lista-livros-confirmados article {
+    grid-template-columns: 58px 1fr;
+  }
+
+  .lista-livros-confirmados strong {
+    grid-column: 2;
+  }
+}

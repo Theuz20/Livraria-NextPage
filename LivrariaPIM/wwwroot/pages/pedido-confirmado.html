@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedido Confirmado | NextPage</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pedido-confirmado.css">
+</head>
+<body>
+  <header>
+    <div class="container barra-navegacao">
+      <a class="logo-livraria" href="index.html">
+        Next<span>Page</span>
+      </a>
+
+      <form class="caixa-pesquisa">
+        <input type="search" placeholder="Pesquise livros, autores e categorias..." aria-label="Pesquisar livros">
+        <button type="submit">Buscar</button>
+      </form>
+
+      <nav class="menu-navegacao">
+        <a href="index.html">Início</a>
+        <a href="livros.html">Livros</a>
+        <a href="categorias.html">Categorias</a>
+        <a href="carrinho.html">Carrinho</a>
+        <a href="login.html" class="link-login">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container pagina-confirmacao">
+    <section class="cartao-confirmacao">
+      <div class="icone-confirmacao">✓</div>
+      <span>Pedido confirmado</span>
+      <h1>Compra realizada com sucesso!</h1>
+      <p>
+        Obrigado por comprar na NextPage. Enviamos os detalhes do pedido para seu e-mail
+        e você já pode acompanhar o andamento da entrega.
+      </p>
+
+      <div class="acoes-confirmacao">
+        <a class="botao-principal" href="livros.html">Continuar comprando</a>
+        <a class="botao-secundario-confirmacao" href="#">Acompanhar pedido</a>
+      </div>
+    </section>
+
+    <section class="grade-confirmacao">
+      <div class="detalhes-pedido">
+        <div class="cabecalho-confirmacao">
+          <span>Resumo</span>
+          <h2>Detalhes do pedido</h2>
+        </div>
+
+        <dl>
+          <div>
+            <dt>Número do pedido</dt>
+            <dd>#NP-2026-1048</dd>
+          </div>
+
+          <div>
+            <dt>Data</dt>
+            <dd>17/05/2026</dd>
+          </div>
+
+          <div>
+            <dt>Pagamento</dt>
+            <dd>Cartão de crédito</dd>
+          </div>
+
+          <div>
+            <dt>Entrega</dt>
+            <dd>Até 5 dias úteis</dd>
+          </div>
+
+          <div>
+            <dt>Total</dt>
+            <dd>R$ 247,60</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="status-pedido">
+        <div class="cabecalho-confirmacao">
+          <span>Próximos passos</span>
+          <h2>Status do pedido</h2>
+        </div>
+
+        <div class="linha-status">
+          <div class="status ativo">
+            <strong>Pedido recebido</strong>
+            <span>Estamos preparando sua compra.</span>
+          </div>
+
+          <div class="status">
+            <strong>Pagamento aprovado</strong>
+            <span>Confirmação em processamento.</span>
+          </div>
+
+          <div class="status">
+            <strong>Pedido enviado</strong>
+            <span>Você receberá o código de rastreio.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="livros-confirmados">
+      <div class="cabecalho-confirmacao">
+        <span>Itens comprados</span>
+        <h2>Livros do pedido</h2>
+      </div>
+
+      <div class="lista-livros-confirmados">
+        <article>
+          <img src="assets/img/clean-code.jpg" alt="Capa do livro Clean Code">
+          <div>
+            <h3>Clean Code</h3>
+            <p>Robert C. Martin</p>
+          </div>
+          <strong>R$ 79,90</strong>
+        </article>
+
+        <article>
+          <img src="assets/img/python-fluente.jpg" alt="Capa do livro Python Fluente">
+          <div>
+            <h3>Python Fluente</h3>
+            <p>Luciano Ramalho</p>
+          </div>
+          <strong>R$ 89,90</strong>
+        </article>
+
+        <article>
+          <img src="assets/img/algoritmos.jpg" alt="Capa do livro Entendendo Algoritmos">
+          <div>
+            <h3>Entendendo Algoritmos</h3>
+            <p>Aditya Bhargava</p>
+          </div>
+          <strong>R$ 64,90</strong>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="conteudo-rodape">
+        <div class="coluna-rodape coluna-principal">
+          <h3>NextPage</h3>
+          <p>
+            Sua livraria online moderna com os melhores livros para aprendizado,
+            entretenimento e desenvolvimento pessoal.
+          </p>
+        </div>
+
+        <div class="coluna-rodape">
+          <h3>Institucional</h3>
+          <a href="#">Sobre nós</a>
+          <a href="contato.html">Contato</a>
+          <a href="#">Termos de uso</a>
+        </div>
+
+        <div class="coluna-rodape">
+          <h3>Categorias</h3>
+          <a href="#">Programação</a>
+          <a href="#">Tecnologia</a>
+          <a href="#">Ficção</a>
+        </div>
+
+        <div class="coluna-rodape">
+          <h3>Atendimento</h3>
+          <p>Email: contato@nextpage.com</p>
+          <p>Telefone: (11) 99999-9999</p>
+        </div>
+      </div>
+
+      <div class="rodape-final">
+        © 2026 NextPage Livraria - Todos os direitos reservados.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
