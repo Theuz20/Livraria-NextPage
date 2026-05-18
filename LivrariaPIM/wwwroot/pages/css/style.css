@@ -68,10 +68,16 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 22px;
+  gap: clamp(28px, 3.2vw, 58px);
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding-right: 5%;
+  padding-left: 5%;
 }
 
 .logo-livraria {
+  flex: 0 0 auto;
   color: var(--branco);
   font-size: 1.8rem;
   font-weight: 800;
@@ -83,9 +89,9 @@ header {
 }
 
 .caixa-pesquisa {
-  flex: 1;
+  flex: 1 1 520px;
   display: flex;
-  max-width: 560px;
+  max-width: 720px;
   border-radius: 12px;
   overflow: hidden;
   background-color: var(--branco);
@@ -120,7 +126,7 @@ header {
 .menu-navegacao {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: clamp(22px, 2vw, 36px);
   color: var(--branco);
   font-size: 0.96rem;
   font-weight: 600;
@@ -131,12 +137,97 @@ header {
   transition: color 0.25s ease;
 }
 
-.menu-navegacao a:hover {
+.menu-navegacao a:hover,
+.menu-navegacao .pagina-ativa {
   color: var(--azul-claro);
 }
 
+.acoes-navbar {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
 .link-login {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.08);
   color: var(--branco);
+  font-size: 0.96rem;
+  font-weight: 700;
+  transition: transform 0.25s ease, border-color 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+}
+
+.link-login::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  background-color: currentColor;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='12' cy='7' r='4'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.link-login:hover,
+.link-login.pagina-ativa {
+  transform: translateY(-2px);
+  border-color: rgba(96, 165, 250, 0.72);
+  background-color: rgba(96, 165, 250, 0.16);
+  color: var(--branco);
+}
+
+.botao-carrinho {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 12px;
+  background-color: var(--azul);
+  color: var(--branco);
+  font-size: 0.96rem;
+  font-weight: 800;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.botao-carrinho::before {
+  content: "";
+  width: 19px;
+  height: 19px;
+  background-color: currentColor;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='8' cy='21' r='1'/%3E%3Ccircle cx='19' cy='21' r='1'/%3E%3Cpath d='M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h8.66a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.badge-carrinho {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 7px;
+  border-radius: 999px;
+  background-color: var(--branco);
+  color: var(--azul);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.texto-carrinho {
+  line-height: 1;
+}
+
+.botao-carrinho:hover,
+.botao-carrinho.pagina-ativa {
+  transform: translateY(-2px);
+  background-color: #1d4ed8;
 }
 
 .banner-principal {
@@ -282,6 +373,18 @@ header {
   background-color: #dbeafe;
 }
 
+.link-livro {
+  display: block;
+}
+
+.link-titulo-livro h3 {
+  transition: color 0.25s ease;
+}
+
+.link-titulo-livro:hover h3 {
+  color: var(--azul);
+}
+
 .informacoes-livro {
   display: flex;
   flex: 1;
@@ -414,19 +517,57 @@ footer {
   text-align: center;
 }
 
+.mensagem-carrinho {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 2000;
+  max-width: min(360px, calc(100% - 48px));
+  padding: 14px 18px;
+  border-radius: 12px;
+  background-color: var(--azul-escuro);
+  color: var(--branco);
+  font-weight: 800;
+  box-shadow: var(--sombra-hover);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.mensagem-carrinho.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.desabilitado {
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.oculto {
+  display: none;
+}
+
 @media (max-width: 1100px) {
   .barra-navegacao {
     flex-wrap: wrap;
+    gap: 18px 28px;
+    padding-right: 4%;
+    padding-left: 4%;
   }
 
   .caixa-pesquisa {
     order: 3;
-    max-width: none;
     flex-basis: 100%;
+    max-width: none;
   }
 
   .menu-navegacao {
     margin-left: auto;
+  }
+
+  .acoes-navbar {
+    margin-left: 0;
   }
 
   .banner-principal {
@@ -453,6 +594,8 @@ footer {
   .barra-navegacao {
     flex-direction: column;
     align-items: stretch;
+    padding-right: 20px;
+    padding-left: 20px;
   }
 
   .logo-livraria {
@@ -463,6 +606,11 @@ footer {
     justify-content: center;
     flex-wrap: wrap;
     margin-left: 0;
+  }
+
+  .acoes-navbar {
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   .banner-principal {
@@ -504,6 +652,20 @@ footer {
   .menu-navegacao {
     gap: 14px;
     font-size: 0.92rem;
+  }
+
+  .acoes-navbar {
+    gap: 10px;
+  }
+
+  .botao-carrinho {
+    min-height: 42px;
+    padding: 0 14px;
+  }
+
+  .link-login {
+    min-height: 42px;
+    padding: 0 14px;
   }
 
   .banner-principal {

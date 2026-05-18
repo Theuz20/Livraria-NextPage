@@ -362,6 +362,35 @@
   font-weight: 700;
 }
 
+.carrinho-vazio {
+  padding: 42px 24px;
+  border-bottom: 1px solid var(--borda);
+  text-align: center;
+}
+
+.carrinho-vazio h3 {
+  color: var(--azul-escuro);
+  font-size: 1.35rem;
+}
+
+.carrinho-vazio p {
+  margin-top: 8px;
+  color: var(--texto-suave);
+}
+
+.carrinho-vazio a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  margin-top: 18px;
+  padding: 0 18px;
+  border-radius: 12px;
+  background-color: var(--azul);
+  color: var(--branco);
+  font-weight: 800;
+}
+
 @media (max-width: 1100px) {
   .layout-carrinho {
     grid-template-columns: 1fr;

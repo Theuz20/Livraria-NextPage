@@ -360,6 +360,15 @@
   text-align: center;
 }
 
+.checkout-vazio {
+  padding: 18px;
+  border-radius: 12px;
+  background-color: #eff6ff;
+  color: var(--texto-suave);
+  font-weight: 700;
+  text-align: center;
+}
+
 @media (max-width: 1100px) {
   .layout-checkout {
     grid-template-columns: 1fr;
