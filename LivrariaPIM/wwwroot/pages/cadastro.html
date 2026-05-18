@@ -32,7 +32,7 @@
         <a href="categorias.html">Categorias</a>
       </nav>
 
-      <div class="acoes-header">
+      <div class="acoes-navbar">
         <a href="login.html" class="link-login">Login</a>
         <a href="carrinho.html" class="botao-carrinho">Carrinho</a>
       </div>
@@ -57,41 +57,41 @@
           <div class="grade-campos">
             <div class="campo-formulario">
               <label for="nome-cadastro">Nome</label>
-              <input id="nome-cadastro" type="text" placeholder="Seu nome">
+              <input id="nome-cadastro" type="text" placeholder="Seu nome" required autocomplete="given-name">
             </div>
 
             <div class="campo-formulario">
               <label for="sobrenome-cadastro">Sobrenome</label>
-              <input id="sobrenome-cadastro" type="text" placeholder="Seu sobrenome">
+              <input id="sobrenome-cadastro" type="text" placeholder="Seu sobrenome" required autocomplete="family-name">
             </div>
           </div>
 
           <div class="campo-formulario">
             <label for="email-cadastro">E-mail</label>
-            <input id="email-cadastro" type="email" placeholder="seuemail@exemplo.com">
+            <input id="email-cadastro" type="email" placeholder="seuemail@exemplo.com" required autocomplete="email" pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$" title="Digite um e-mail válido, como nome@dominio.com">
           </div>
 
           <div class="grade-campos">
             <div class="campo-formulario">
               <label for="telefone-cadastro">Telefone</label>
-              <input id="telefone-cadastro" type="tel" placeholder="(11) 99999-9999">
+              <input id="telefone-cadastro" type="tel" placeholder="11999999999" required autocomplete="tel" inputmode="numeric" minlength="11" maxlength="11" pattern="[0-9]{11}" title="Digite DDD + 9 dígitos do celular, apenas números">
             </div>
 
             <div class="campo-formulario">
               <label for="cpf-cadastro">CPF</label>
-              <input id="cpf-cadastro" type="text" placeholder="000.000.000-00">
+              <input id="cpf-cadastro" type="text" placeholder="000.000.000-00" required inputmode="numeric" minlength="14" maxlength="14" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" title="Digite um CPF válido no formato 000.000.000-00">
             </div>
           </div>
 
           <div class="grade-campos">
             <div class="campo-formulario">
               <label for="senha-cadastro">Senha</label>
-              <input id="senha-cadastro" type="password" placeholder="Crie uma senha">
+              <input id="senha-cadastro" type="password" placeholder="Crie uma senha" required autocomplete="new-password" minlength="6">
             </div>
 
             <div class="campo-formulario">
               <label for="confirmar-senha">Confirmar senha</label>
-              <input id="confirmar-senha" type="password" placeholder="Repita a senha">
+              <input id="confirmar-senha" type="password" placeholder="Repita a senha" required autocomplete="new-password" minlength="6">
             </div>
           </div>
 
@@ -132,14 +132,14 @@
           <h3>Institucional</h3>
           <a href="sobre.html">Sobre nós</a>
           <a href="contato.html">Contato</a>
-          <a href="#">Termos de uso</a>
+          <a href="termos.html">Termos de uso</a>
         </div>
 
         <div class="coluna-rodape">
           <h3>Categorias</h3>
-          <a href="#">Programação</a>
-          <a href="#">Tecnologia</a>
-          <a href="#">Ficção</a>
+          <a href="categorias.html">Programação</a>
+          <a href="categorias.html">Tecnologia</a>
+          <a href="categorias.html">Ficção</a>
         </div>
 
         <div class="coluna-rodape">
@@ -157,7 +157,7 @@
     </div>
   </footer>
 
-  <script src="js/app.js"></script>
+  <script src="js/javascript.js"></script>
 
 </body>
 </html>

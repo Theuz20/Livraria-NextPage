@@ -32,7 +32,7 @@
         <a href="categorias.html">Categorias</a>
       </nav>
 
-      <div class="acoes-header">
+      <div class="acoes-navbar">
         <a href="login.html" class="link-login">Login</a>
         <a href="carrinho.html" class="botao-carrinho">Carrinho</a>
       </div>
@@ -56,12 +56,12 @@
 
           <div class="campo-formulario">
             <label for="email-login">E-mail</label>
-            <input id="email-login" type="email" placeholder="seuemail@exemplo.com">
+            <input id="email-login" type="email" placeholder="seuemail@exemplo.com" required autocomplete="email" pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$" title="Digite um e-mail válido, como nome@dominio.com">
           </div>
 
           <div class="campo-formulario">
             <label for="senha-login">Senha</label>
-            <input id="senha-login" type="password" placeholder="Digite sua senha">
+            <input id="senha-login" type="password" placeholder="Digite sua senha" required autocomplete="current-password" minlength="6">
           </div>
 
           <div class="linha-opcoes">
@@ -70,7 +70,7 @@
               <span>Lembrar meu acesso</span>
             </label>
 
-            <a href="#">Esqueci minha senha</a>
+            <a href="contato.html">Esqueci minha senha</a>
           </div>
 
           <button type="submit">Entrar</button>
@@ -105,14 +105,14 @@
           <h3>Institucional</h3>
           <a href="sobre.html">Sobre nós</a>
           <a href="contato.html">Contato</a>
-          <a href="#">Termos de uso</a>
+          <a href="termos.html">Termos de uso</a>
         </div>
 
         <div class="coluna-rodape">
           <h3>Categorias</h3>
-          <a href="#">Programação</a>
-          <a href="#">Tecnologia</a>
-          <a href="#">Ficção</a>
+          <a href="categorias.html">Programação</a>
+          <a href="categorias.html">Tecnologia</a>
+          <a href="categorias.html">Ficção</a>
         </div>
 
         <div class="coluna-rodape">
