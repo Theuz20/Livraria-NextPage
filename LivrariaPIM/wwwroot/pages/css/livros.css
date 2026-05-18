@@ -84,6 +84,10 @@
   position: relative;
 }
 
+.catalogo-livros .card-livro.oculto {
+  display: none;
+}
+
 .catalogo-livros .card-livro img {
   height: 360px;
   padding: 18px;
@@ -120,7 +124,7 @@
   font-size: 0.95rem;
   font-weight: 800;
   letter-spacing: 1px;
-}card-livro
+}
 
 .avaliacao-card span {
   color: var(--texto-suave);
