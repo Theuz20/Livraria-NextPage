@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login | NextPage</title>
+  <title>Esqueci minha senha | NextPage</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,42 +44,65 @@
 
     <section class="layout-acesso layout-simples">
 
-      <div class="painel-formulario">
+      <div class="painel-formulario" id="painel-principal">
 
-        <div class="cabecalho-formulario">
-          <span>Área do cliente</span>
-          <h2>Login</h2>
-          <p>Use seu e-mail e senha cadastrados para continuar.</p>
+        <!-- Estado inicial: formulário de solicitação -->
+        <div id="estado-formulario">
+
+          <div class="cabecalho-formulario">
+            <span>Área do cliente</span>
+            <h2>Esqueci minha senha</h2>
+            <p>Digite o e-mail da sua conta e te mandamos as instruções pra redefinir a senha.</p>
+          </div>
+
+          <form class="formulario-acesso" id="form-esqueci-senha">
+
+            <div class="campo-formulario">
+              <label for="email-recuperacao">E-mail</label>
+              <input
+                id="email-recuperacao"
+                type="email"
+                placeholder="seuemail@exemplo.com"
+                required
+                autocomplete="email"
+                pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$"
+                title="Digite um e-mail válido, como nome@dominio.com"
+              >
+            </div>
+
+            <button type="submit" id="btn-enviar">
+              Enviar instruções
+            </button>
+
+          </form>
+
+          <div class="chamada-cadastro">
+            <p>Lembrou a senha?</p>
+            <a href="login.html">Voltar pro login</a>
+          </div>
+
         </div>
 
-        <form class="formulario-acesso">
+        <!-- Estado de confirmação: aparece após envio -->
+        <div id="estado-confirmacao" class="confirmacao-envio oculto">
 
-          <div class="campo-formulario">
-            <label for="email-login">E-mail</label>
-            <input id="email-login" type="email" placeholder="seuemail@exemplo.com" required autocomplete="email" pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$" title="Digite um e-mail válido, como nome@dominio.com">
+          <div class="icone-confirmacao" aria-hidden="true">✉️</div>
+
+          <div class="cabecalho-formulario">
+            <span>E-mail enviado</span>
+            <h2>Verifique sua caixa de entrada</h2>
+            <p id="texto-confirmacao">
+              Enviamos as instruções pra redefinir sua senha. Verifique sua caixa de entrada e também a pasta de spam.
+            </p>
           </div>
 
-          <div class="campo-formulario">
-            <label for="senha-login">Senha</label>
-            <input id="senha-login" type="password" placeholder="Digite sua senha" required autocomplete="current-password" minlength="6">
+          <div class="acoes-confirmacao">
+            <button type="button" class="botao-reenviar" id="btn-reenviar">
+              Não recebi o e-mail
+            </button>
+            <a href="login.html" class="botao-voltar-login">Voltar pro login</a>
           </div>
 
-          <div class="linha-opcoes">
-            <label class="lembrar-acesso">
-              <input type="checkbox">
-              <span>Lembrar meu acesso</span>
-            </label>
-
-            <a href="esqueci-senha.html">Esqueci minha senha</a>
-          </div>
-
-          <button type="submit">Entrar</button>
-
-        </form>
-
-        <div class="chamada-cadastro">
-          <p>Ainda não tem uma conta?</p>
-          <a href="cadastro.html">Criar conta grátis</a>
         </div>
 
       </div>
@@ -138,5 +161,6 @@
   <script src="js/livros.js"></script>
   <script src="js/detalhes.js"></script>
   <script src="js/pesquisa.js"></script>
+  <script src="js/esqueci-senha.js"></script>
   <script src="js/main.js"></script>
 </html>

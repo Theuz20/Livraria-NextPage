@@ -190,3 +190,57 @@
     flex-direction: column;
   }
 }
+
+/* ── Esqueci minha senha ─────────────────────────────────────────── */
+
+.confirmacao-envio {
+  text-align: center;
+}
+
+.icone-confirmacao {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.acoes-confirmacao {
+  display: grid;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.botao-voltar-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 48px;
+  border: 0;
+  border-radius: 12px;
+  background-color: var(--azul);
+  color: var(--branco);
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.botao-voltar-login:hover {
+  transform: translateY(-3px);
+  background-color: #1d4ed8;
+}
+
+.botao-reenviar {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  background-color: transparent;
+  color: var(--texto-suave);
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.botao-reenviar:hover {
+  border-color: var(--azul);
+  color: var(--azul);
+}
