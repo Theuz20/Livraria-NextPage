@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Conta | NextPage</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/conta.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="container barra-navegacao">
+      <a class="logo-livraria" href="index.html">Next<span>Page</span></a>
+
+      <div class="caixa-pesquisa">
+        <input type="search" id="campo-pesquisa" placeholder="Pesquise livros, autores e categorias..." aria-label="Pesquisar livros" autocomplete="off">
+        <button type="button" id="btn-pesquisa">Buscar</button>
+      </div>
+
+      <nav class="menu-navegacao">
+        <a href="index.html">Início</a>
+        <a href="livros.html">Livros</a>
+        <a href="categorias.html">Categorias</a>
+      </nav>
+
+      <div class="acoes-navbar">
+        <a href="minha-conta.html" class="link-login pagina-ativa">Minha Conta</a>
+        <a href="carrinho.html" class="botao-carrinho">Carrinho</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pagina-conta">
+
+    <!-- ── Painel lateral do perfil ──────────────────────────────── -->
+    <aside class="sidebar-conta">
+
+      <div class="perfil-card">
+        <div class="avatar-conta" aria-label="Avatar do usuário">?</div>
+        <h2 class="perfil-nome">Carregando…</h2>
+        <p class="perfil-email">—</p>
+        <span class="perfil-nivel">🌱 Novo Leitor</span>
+        <p class="perfil-data">Membro desde —</p>
+      </div>
+
+      <div class="nivel-card">
+        <div class="nivel-header">
+          <span>Nível de leitura</span>
+          <span class="nivel-xp">0%</span>
+        </div>
+        <div class="barra-nivel">
+          <div class="barra-nivel-fill" style="width:0%"></div>
+        </div>
+        <p class="nivel-proximo"></p>
+      </div>
+
+      <div class="stats-rapidos">
+        <div class="stat-item">
+          <strong class="stat-pedidos">0</strong>
+          <span>Pedidos</span>
+        </div>
+        <div class="stat-item">
+          <strong class="stat-livros">0</strong>
+          <span>Livros</span>
+        </div>
+        <div class="stat-item">
+          <strong class="stat-horas">0h</strong>
+          <span>Leitura</span>
+        </div>
+        <div class="stat-item">
+          <strong class="stat-gasto">R$ 0</strong>
+          <span>Total gasto</span>
+        </div>
+      </div>
+
+      <nav class="nav-conta">
+        <button class="aba-conta ativa" data-aba="dashboard">📊 Dashboard</button>
+        <button class="aba-conta" data-aba="pedidos">🛒 Histórico de Pedidos</button>
+        <button class="aba-conta" data-aba="biblioteca">📚 Minha Biblioteca</button>
+        <button class="aba-conta" data-aba="favoritos">❤️ Favoritos</button>
+        <button class="aba-conta" data-aba="relatorio">📈 Relatório de Leitura</button>
+        <button class="aba-conta" data-aba="configuracoes">⚙️ Configurações</button>
+        <a href="contato.html" class="aba-conta aba-link">💬 Suporte</a>
+      </nav>
+
+    </aside>
+
+    <!-- ── Conteúdo principal ──────────────────────────────────── -->
+    <div class="conteudo-conta">
+
+      <!-- Dashboard -->
+      <section class="secao-conta ativa" data-secao="dashboard">
+        <div class="secao-header">
+          <h1>Dashboard</h1>
+          <p>Visão geral da sua conta NextPage</p>
+        </div>
+
+        <div class="dashboard-grid">
+          <div class="dash-card destaque">
+            <span class="dash-icone">💰</span>
+            <div>
+              <strong class="dash-total-compras">R$ 0</strong>
+              <span>Total em compras</span>
+            </div>
+          </div>
+          <div class="dash-card">
+            <span class="dash-icone">📖</span>
+            <div>
+              <strong class="dash-livros">0</strong>
+              <span>Livros adquiridos</span>
+            </div>
+          </div>
+          <div class="dash-card">
+            <span class="dash-icone">📅</span>
+            <div>
+              <strong class="dash-ultima-compra">—</strong>
+              <span>Última compra</span>
+            </div>
+          </div>
+          <div class="dash-card">
+            <span class="dash-icone">🏷️</span>
+            <div>
+              <strong class="dash-categoria">—</strong>
+              <span>Categoria favorita</span>
+            </div>
+          </div>
+          <div class="dash-card">
+            <span class="dash-icone">⏱️</span>
+            <div>
+              <strong class="dash-horas-totais">0h</strong>
+              <span>Horas de leitura</span>
+            </div>
+          </div>
+          <div class="dash-card">
+            <span class="dash-icone">📆</span>
+            <div>
+              <strong class="dash-media-semanal">0h</strong>
+              <span>Média semanal</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gráfico de leitura semanal -->
+        <div class="grafico-card">
+          <div class="grafico-titulo">
+            <h3>Leitura semanal</h3>
+            <span>Últimas 8 semanas</span>
+          </div>
+          <div class="grafico-area">
+            <div class="grafico-leitura"></div>
+          </div>
+        </div>
+
+        <!-- Últimos livros vistos -->
+        <div class="secao-sub">
+          <h3>Vistos recentemente</h3>
+          <div class="lista-vistos"></div>
+        </div>
+
+        <!-- Recomendações -->
+        <div class="secao-sub">
+          <h3>Recomendados para você</h3>
+          <div class="lista-recomendacoes"></div>
+        </div>
+      </section>
+
+      <!-- Histórico de Pedidos -->
+      <section class="secao-conta" data-secao="pedidos">
+        <div class="secao-header">
+          <h1>Histórico de Pedidos</h1>
+          <p>Todos os seus pedidos na NextPage</p>
+        </div>
+        <div class="lista-historico"></div>
+      </section>
+
+      <!-- Biblioteca -->
+      <section class="secao-conta" data-secao="biblioteca">
+        <div class="secao-header">
+          <h1>Minha Biblioteca</h1>
+          <p>Todos os livros que você adquiriu</p>
+        </div>
+        <div class="grid-biblioteca"></div>
+      </section>
+
+      <!-- Favoritos -->
+      <section class="secao-conta" data-secao="favoritos">
+        <div class="secao-header">
+          <h1>Meus Favoritos</h1>
+          <p>Livros que você salvou para depois</p>
+        </div>
+        <div class="grid-favoritos"></div>
+      </section>
+
+      <!-- Relatório de Leitura -->
+      <section class="secao-conta" data-secao="relatorio">
+        <div class="secao-header">
+          <h1>Relatório de Leitura</h1>
+          <p>Suas estatísticas detalhadas de leitura</p>
+        </div>
+        <div class="relatorio-leitura"></div>
+      </section>
+
+      <!-- Configurações -->
+      <section class="secao-conta" data-secao="configuracoes">
+        <div class="secao-header">
+          <h1>Configurações</h1>
+          <p>Gerencie suas informações pessoais</p>
+        </div>
+
+        <div class="configuracoes-grid">
+          <div class="config-card">
+            <h3>Dados pessoais</h3>
+            <form class="form-configuracoes">
+              <div class="campo-formulario">
+                <label for="config-nome">Nome completo</label>
+                <input id="config-nome" type="text" placeholder="Seu nome" required>
+              </div>
+              <div class="campo-formulario">
+                <label for="config-email">E-mail</label>
+                <input id="config-email" type="email" placeholder="seuemail@exemplo.com" required>
+              </div>
+              <div class="campo-formulario">
+                <label for="config-senha-atual">Senha atual</label>
+                <input id="config-senha-atual" type="password" placeholder="Digite sua senha atual">
+              </div>
+              <div class="campo-formulario">
+                <label for="config-senha-nova">Nova senha</label>
+                <input id="config-senha-nova" type="password" placeholder="Deixe em branco para manter" minlength="6">
+              </div>
+              <button type="submit" class="btn-salvar">Salvar alterações</button>
+            </form>
+          </div>
+
+          <div class="config-card config-card-danger">
+            <h3>Conta</h3>
+            <p>Gerencie o acesso à sua conta NextPage.</p>
+            <div class="config-acoes">
+              <a href="contato.html" class="btn-suporte">💬 Falar com suporte</a>
+              <button class="btn-logout-conta">Sair da conta</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="conteudo-rodape">
+        <div class="coluna-rodape coluna-principal">
+          <h3>NextPage</h3>
+          <p>Sua livraria online moderna com os melhores livros.</p>
+        </div>
+        <div class="coluna-rodape">
+          <h3>Institucional</h3>
+          <a href="sobre.html">Sobre nós</a>
+          <a href="contato.html">Contato</a>
+          <a href="termos.html">Termos de uso</a>
+        </div>
+        <div class="coluna-rodape">
+          <h3>Categorias</h3>
+          <a href="categorias.html">Programação</a>
+          <a href="categorias.html">Tecnologia</a>
+          <a href="categorias.html">Ficção</a>
+        </div>
+        <div class="coluna-rodape">
+          <h3>Atendimento</h3>
+          <p>Email: contato@nextpage.com</p>
+          <p>Telefone: (11) 99999-9999</p>
+        </div>
+      </div>
+      <div class="rodape-final">© 2026 NextPage Livraria - Todos os direitos reservados.</div>
+    </div>
+  </footer>
+
+  <script src="js/utils.js"></script>
+  <script src="js/catalogo.js"></script>
+  <script src="js/carrinho.js"></script>
+  <script src="js/checkout.js"></script>
+  <script src="js/livros.js"></script>
+  <script src="js/detalhes.js"></script>
+  <script src="js/pesquisa.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/conta.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -96,3 +96,12 @@ function renderizarDetalheLivroDinamico() {
     `;
   }
 }
+
+// Registra o livro como visualizado recentemente ao carregar a página de detalhe
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+  if (id && typeof registrarLivroVisto === "function") {
+    registrarLivroVisto(id);
+  }
+});
