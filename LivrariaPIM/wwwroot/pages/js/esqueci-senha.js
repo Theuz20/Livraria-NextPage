@@ -68,11 +68,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Depois de 2 tentativas, sugere verificar o spam ou entrar em contato
     if (tentativas >= 2) {
-      mostrarMensagem("Verifique a pasta de spam ou entre em contato com o suporte.");
+      mostrarAvisoSenha("Verifique a pasta de spam ou entre em contato com o suporte.", "aviso");
     } else {
-      mostrarMensagem("Confirme o e-mail e tente novamente.");
+      mostrarAvisoSenha("Confirme o e-mail e tente novamente.", "info");
     }
   });
+
+  // Exibe um aviso inline dentro do painel, visível em qualquer tema de cor.
+  // tipo: "info" (azul) | "aviso" (amarelo)
+  function mostrarAvisoSenha(texto, tipo) {
+    const avisoAntigo = document.getElementById("aviso-senha-inline");
+    avisoAntigo?.remove();
+
+    const aviso = document.createElement("div");
+    aviso.id = "aviso-senha-inline";
+    aviso.className = "aviso-senha-inline aviso-senha--" + (tipo || "info");
+    aviso.setAttribute("role", "alert");
+
+    const icone = tipo === "aviso" ? "⚠️" : "ℹ️";
+    aviso.innerHTML = `<span class="aviso-senha-icone" aria-hidden="true">${icone}</span><span>${texto}</span>`;
+
+    // Insere logo abaixo do campo de email, antes do botão
+    const formulario = document.getElementById("form-esqueci-senha");
+    if (formulario) {
+      formulario.insertAdjacentElement("afterend", aviso);
+    } else {
+      document.getElementById("estado-formulario")?.appendChild(aviso);
+    }
+
+    // Remove automaticamente após 6 segundos
+    setTimeout(() => aviso?.remove(), 6000);
+  }
 
   // Limpa a validação customizada enquanto o usuário digita
   const inputEmail = document.getElementById("email-recuperacao");
