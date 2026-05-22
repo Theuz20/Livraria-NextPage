@@ -127,10 +127,10 @@ function atualizarLinksCategorias() {
 
 // ── Formulários ───────────────────────────────────────────────────
 
-// Valida e processa os formulários de login, cadastro e contato.
-// Checa se os campos estão preenchidos, compara senhas se tiver, e mostra feedback.
+// Valida e processa o formulário de contato.
+// Login e cadastro são tratados pelo login-page.js pra não ter handler duplicado.
 function configurarFormularios() {
-  document.querySelectorAll(".formulario-acesso, .formulario-contato").forEach((formulario) => {
+  document.querySelectorAll(".formulario-contato").forEach((formulario) => {
     formulario.addEventListener("submit", (evento) => {
       evento.preventDefault();
 

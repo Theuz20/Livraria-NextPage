@@ -8,7 +8,7 @@ const FAVORITOS_KEY = "nextpage-favoritos";
 const LEITURA_KEY = "nextpage-leitura";
 const VISTOS_KEY = "nextpage-vistos-recentemente";
 
-const moedaConta = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
+// moedaConta removido — usa "moeda" do utils.js
 
 // ── Dados simulados de pedidos ─────────────────────────────────────
 
@@ -250,7 +250,7 @@ function renderizarPainel() {
   setTexto(".stat-pedidos", pedidos.length);
   setTexto(".stat-livros", livros.length);
   setTexto(".stat-horas", formatarMinutos(minutosTotal));
-  setTexto(".stat-gasto", moedaConta.format(pedidos.reduce((s, p) => s + p.total, 0)));
+  setTexto(".stat-gasto", moeda.format(pedidos.reduce((s, p) => s + p.total, 0)));
 
   // Barra de nível
   const barra = document.querySelector(".barra-nivel-fill");
@@ -259,7 +259,7 @@ function renderizarPainel() {
   if (nivel.proximo) setTexto(".nivel-proximo", `Faltam ${nivel.proximo - livros.length} livros`);
 
   // Dashboard cards
-  setTexto(".dash-total-compras", moedaConta.format(pedidos.reduce((s, p) => s + p.total, 0)));
+  setTexto(".dash-total-compras", moeda.format(pedidos.reduce((s, p) => s + p.total, 0)));
   setTexto(".dash-livros", livros.length);
   setTexto(".dash-ultima-compra", ultimoPedido ? ultimoPedido.data : "-");
   setTexto(".dash-categoria", categorias[0]?.[0] || "-");
@@ -339,7 +339,7 @@ function renderizarHistorico(pedidos) {
         <div class="pedido-capas">${capas}${pedido.itens.length > 3 ? `<span class="mais-capas">+${pedido.itens.length - 3}</span>` : ""}</div>
         <div class="pedido-footer">
           <span class="pedido-livros">${pedido.itens.length} ${pedido.itens.length === 1 ? "livro" : "livros"}</span>
-          <strong class="pedido-total">${moedaConta.format(pedido.total)}</strong>
+          <strong class="pedido-total">${moeda.format(pedido.total)}</strong>
         </div>
         <button class="btn-ver-pedido" data-id="${pedido.id}">Ver detalhes</button>
       </article>
@@ -370,7 +370,7 @@ function abrirModalPedido(pedido) {
           <div><span>Pedido</span><strong>${pedido.id}</strong></div>
           <div><span>Data</span><strong>${pedido.data}</strong></div>
           <div><span>Status</span><span class="badge-status badge-${st.cor}">${st.texto}</span></div>
-          <div><span>Total</span><strong>${moedaConta.format(pedido.total)}</strong></div>
+          <div><span>Total</span><strong>${moeda.format(pedido.total)}</strong></div>
         </div>
         <h4>Livros</h4>
         <div class="modal-livros">
@@ -380,7 +380,7 @@ function abrirModalPedido(pedido) {
               <div>
                 <strong>${item.titulo}</strong>
                 <span>${item.autor}</span>
-                <span>${moedaConta.format(item.preco)}</span>
+                <span>${moeda.format(item.preco)}</span>
               </div>
             </div>
           `).join("")}
@@ -472,7 +472,7 @@ function renderizarFavoritos() {
           <span class="categoria-livro">${livro.categoria}</span>
           <h4>${livro.titulo}</h4>
           <p>${livro.autor}</p>
-          <strong>${moedaConta.format(livro.preco)}</strong>
+          <strong>${moeda.format(livro.preco)}</strong>
           <div class="favorito-acoes">
             <a href="livro.html?id=${livro.id}" class="btn-ver-livro">Ver livro</a>
             <button class="btn-remover-favorito" data-id="${id}">✕</button>
@@ -510,7 +510,7 @@ function renderizarVistoRecentemente() {
       <img src="${livro.imagem}" alt="${livro.titulo}">
       <div>
         <strong>${livro.titulo}</strong>
-        <span>${moedaConta.format(livro.preco)}</span>
+        <span>${moeda.format(livro.preco)}</span>
       </div>
     </a>
   `).join("");
@@ -540,7 +540,7 @@ function renderizarRecomendacoes(pedidos) {
       <div>
         <span class="categoria-livro">${livro.categoria}</span>
         <strong>${livro.titulo}</strong>
-        <span>${moedaConta.format(livro.preco)}</span>
+        <span>${moeda.format(livro.preco)}</span>
       </div>
     </a>
   `).join("");

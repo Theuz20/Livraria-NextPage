@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Admin | NextPage</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body class="admin-body">
+
+  <!-- ── Sidebar ─────────────────────────────────────────────────── -->
+  <aside class="admin-sidebar" id="sidebar">
+
+    <div class="admin-logo">
+      <a href="index.html">Next<span>Page</span></a>
+      <span class="admin-badge">Admin</span>
+    </div>
+
+    <nav class="admin-nav">
+      <button class="admin-nav-item ativo" data-secao="dashboard">
+        <span class="nav-icone">📊</span>
+        <span>Dashboard</span>
+      </button>
+      <button class="admin-nav-item" data-secao="usuarios">
+        <span class="nav-icone">👥</span>
+        <span>Usuários</span>
+      </button>
+      <button class="admin-nav-item" data-secao="pedidos">
+        <span class="nav-icone">📦</span>
+        <span>Pedidos</span>
+      </button>
+      <button class="admin-nav-item" data-secao="suporte">
+        <span class="nav-icone">🎧</span>
+        <span>Suporte</span>
+        <span class="nav-badge" id="badge-suporte">3</span>
+      </button>
+      <button class="admin-nav-item" data-secao="relatorio">
+        <span class="nav-icone">📈</span>
+        <span>Relatório</span>
+      </button>
+    </nav>
+
+    <div class="admin-sidebar-footer">
+      <div class="admin-user-info">
+        <div class="admin-avatar">A</div>
+        <div>
+          <p class="admin-user-nome">Admin</p>
+          <p class="admin-user-role">Administrador</p>
+        </div>
+      </div>
+      <a href="index.html" class="btn-voltar-site">← Voltar ao site</a>
+    </div>
+
+  </aside>
+
+  <!-- ── Conteúdo principal ───────────────────────────────────────── -->
+  <div class="admin-main">
+
+    <!-- Header do painel -->
+    <header class="admin-header">
+      <div class="admin-header-esq">
+        <button class="btn-menu-mobile" id="btn-menu-mobile" aria-label="Abrir menu">☰</button>
+        <div>
+          <h1 class="admin-titulo" id="admin-titulo">Dashboard</h1>
+          <p class="admin-subtitulo" id="admin-subtitulo">Visão geral da NextPage</p>
+        </div>
+      </div>
+      <div class="admin-header-dir">
+        <span class="admin-data" id="admin-data"></span>
+      </div>
+    </header>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         SEÇÃO: DASHBOARD
+    ══════════════════════════════════════════════════════════════ -->
+    <section class="admin-secao ativa" id="secao-dashboard">
+
+      <!-- KPIs principais -->
+      <div class="kpi-grid">
+        <div class="kpi-card azul">
+          <div class="kpi-icone">👥</div>
+          <div class="kpi-info">
+            <span class="kpi-label">Usuários cadastrados</span>
+            <strong class="kpi-valor" id="kpi-usuarios">0</strong>
+            <span class="kpi-delta positivo">↑ 12% este mês</span>
+          </div>
+        </div>
+        <div class="kpi-card verde">
+          <div class="kpi-icone">📦</div>
+          <div class="kpi-info">
+            <span class="kpi-label">Pedidos realizados</span>
+            <strong class="kpi-valor" id="kpi-pedidos">0</strong>
+            <span class="kpi-delta positivo">↑ 8% este mês</span>
+          </div>
+        </div>
+        <div class="kpi-card roxo">
+          <div class="kpi-icone">📚</div>
+          <div class="kpi-info">
+            <span class="kpi-label">Livros vendidos</span>
+            <strong class="kpi-valor" id="kpi-livros">0</strong>
+            <span class="kpi-delta positivo">↑ 21% este mês</span>
+          </div>
+        </div>
+        <div class="kpi-card laranja">
+          <div class="kpi-icone">💰</div>
+          <div class="kpi-info">
+            <span class="kpi-label">Receita total</span>
+            <strong class="kpi-valor" id="kpi-receita">R$ 0</strong>
+            <span class="kpi-delta positivo">↑ 15% este mês</span>
+          </div>
+        </div>
+        <div class="kpi-card vermelho">
+          <div class="kpi-icone">🎧</div>
+          <div class="kpi-info">
+            <span class="kpi-label">Chamados em aberto</span>
+            <strong class="kpi-valor" id="kpi-chamados">0</strong>
+            <span class="kpi-delta negativo" id="kpi-chamados-delta">aguardando atenção</span>
+          </div>
+        </div>
+        <div class="kpi-card cinza">
+          <div class="kpi-icone">⭐</div>
+          <div class="kpi-info">
+            <span class="kpi-label">Avaliação média</span>
+            <strong class="kpi-valor">4.8</strong>
+            <span class="kpi-delta positivo">base nos pedidos</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Linha inferior: livros mais vendidos + atividade recente -->
+      <div class="dashboard-grid">
+
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2>📚 Livros mais vendidos</h2>
+          </div>
+          <ul class="ranking-livros" id="ranking-livros"></ul>
+        </div>
+
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2>🕐 Atividade recente</h2>
+          </div>
+          <ul class="atividade-lista" id="atividade-lista"></ul>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         SEÇÃO: USUÁRIOS
+    ══════════════════════════════════════════════════════════════ -->
+    <section class="admin-secao" id="secao-usuarios">
+
+      <div class="admin-card">
+        <div class="admin-card-header">
+          <h2>Todos os usuários</h2>
+          <div class="header-acoes">
+            <input type="search" class="input-busca" id="busca-usuarios" placeholder="Buscar por nome ou e-mail…">
+          </div>
+        </div>
+
+        <table class="admin-table" id="tabela-usuarios">
+          <thead>
+            <tr>
+              <th>Usuário</th>
+              <th>E-mail</th>
+              <th>Nível</th>
+              <th>Membro desde</th>
+              <th>Pedidos</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-usuarios"></tbody>
+        </table>
+
+        <div class="tabela-vazia oculto" id="vazio-usuarios">
+          Nenhum usuário encontrado.
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         SEÇÃO: PEDIDOS
+    ══════════════════════════════════════════════════════════════ -->
+    <section class="admin-secao" id="secao-pedidos">
+
+      <div class="admin-card">
+        <div class="admin-card-header">
+          <h2>Todos os pedidos</h2>
+          <div class="header-acoes">
+            <select class="input-busca" id="filtro-status-pedido">
+              <option value="todos">Todos os status</option>
+              <option value="entregue">Entregue</option>
+              <option value="enviado">Enviado</option>
+              <option value="processando">Processando</option>
+              <option value="cancelado">Cancelado</option>
+            </select>
+          </div>
+        </div>
+
+        <table class="admin-table" id="tabela-pedidos">
+          <thead>
+            <tr>
+              <th>Pedido</th>
+              <th>Cliente</th>
+              <th>Livros</th>
+              <th>Total</th>
+              <th>Data</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-pedidos"></tbody>
+        </table>
+      </div>
+
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         SEÇÃO: SUPORTE
+    ══════════════════════════════════════════════════════════════ -->
+    <section class="admin-secao" id="secao-suporte">
+
+      <!-- KPIs do suporte -->
+      <div class="kpi-grid kpi-grid-3">
+        <div class="kpi-card vermelho">
+          <div class="kpi-icone">🔴</div>
+          <div class="kpi-info">
+            <span class="kpi-label">Em aberto</span>
+            <strong class="kpi-valor" id="suporte-aberto">0</strong>
+          </div>
+        </div>
+        <div class="kpi-card laranja">
+          <div class="kpi-icone">🟡</div>
+          <div class="kpi-info">
+            <span class="kpi-label">Em andamento</span>
+            <strong class="kpi-valor" id="suporte-andamento">0</strong>
+          </div>
+        </div>
+        <div class="kpi-card verde">
+          <div class="kpi-icone">🟢</div>
+          <div class="kpi-info">
+            <span class="kpi-label">Resolvidos</span>
+            <strong class="kpi-valor" id="suporte-resolvido">0</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="admin-card">
+        <div class="admin-card-header">
+          <h2>Chamados de suporte</h2>
+          <div class="header-acoes">
+            <select class="input-busca" id="filtro-suporte">
+              <option value="todos">Todos</option>
+              <option value="aberto">Em aberto</option>
+              <option value="andamento">Em andamento</option>
+              <option value="resolvido">Resolvido</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="chamados-lista" id="chamados-lista"></div>
+      </div>
+
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         SEÇÃO: RELATÓRIO
+    ══════════════════════════════════════════════════════════════ -->
+    <section class="admin-secao" id="secao-relatorio">
+
+      <!-- Resumo executivo -->
+      <div class="relatorio-resumo">
+        <div class="resumo-header">
+          <div>
+            <h2>Relatório Geral</h2>
+            <p>Dados consolidados da plataforma NextPage</p>
+          </div>
+          <button class="btn-exportar" id="btn-exportar">⬇ Exportar CSV</button>
+        </div>
+      </div>
+
+      <div class="relatorio-grid">
+
+        <!-- Vendas por categoria -->
+        <div class="admin-card">
+          <div class="admin-card-header"><h2>📂 Vendas por categoria</h2></div>
+          <ul class="categoria-lista" id="relatorio-categorias"></ul>
+        </div>
+
+        <!-- Indicadores de suporte -->
+        <div class="admin-card">
+          <div class="admin-card-header"><h2>🎧 Indicadores de suporte</h2></div>
+          <div class="indicadores-suporte" id="indicadores-suporte"></div>
+        </div>
+
+        <!-- Tabela resumo mensal -->
+        <div class="admin-card card-full">
+          <div class="admin-card-header"><h2>📅 Resumo mensal</h2></div>
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Mês</th>
+                <th>Novos usuários</th>
+                <th>Pedidos</th>
+                <th>Livros vendidos</th>
+                <th>Receita</th>
+                <th>Chamados</th>
+                <th>Resolvidos</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-relatorio"></tbody>
+          </table>
+        </div>
+
+      </div>
+
+    </section>
+
+  </div><!-- fim .admin-main -->
+
+  <!-- Modal de detalhe do chamado -->
+  <div class="modal-overlay oculto" id="modal-chamado">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="modal-chamado-titulo">Chamado #000</h3>
+        <button class="modal-fechar" id="modal-fechar">✕</button>
+      </div>
+      <div class="modal-body" id="modal-chamado-body"></div>
+      <div class="modal-footer">
+        <select class="input-busca" id="modal-status-select">
+          <option value="aberto">Em aberto</option>
+          <option value="andamento">Em andamento</option>
+          <option value="resolvido">Resolvido</option>
+        </select>
+        <button class="btn-salvar-status" id="btn-salvar-status">Salvar status</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/utils.js"></script>
+  <script src="js/catalogo.js"></script>
+  <script src="js/carrinho.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

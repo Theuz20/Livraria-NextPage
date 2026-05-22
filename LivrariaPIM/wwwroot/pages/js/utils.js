@@ -60,15 +60,16 @@ function escaparHtml(valor) {
     .replace(/'/g, "&#039;");
 }
 
-// Mostra uma mensagem flutuante na tela (tipo toast)
-// Aparece, fica 2.6s e some sozinha
-function mostrarMensagem(texto) {
-  // Remove qualquer mensagem anterior que ainda esteja aparecendo
+// Mostra uma mensagem flutuante na tela (tipo toast).
+// Aparece, fica 2.6s e some sozinha.
+// Passa "sucesso" como tipo pra usar a variante verde, deixando bem visível.
+function mostrarMensagem(texto, tipo) {
+  // Remove qualquer mensagem anterior que ainda esteja na tela
   const mensagemAntiga = document.querySelector(".mensagem-carrinho");
   mensagemAntiga?.remove();
 
   const mensagem = document.createElement("div");
-  mensagem.className = "mensagem-carrinho";
+  mensagem.className = tipo ? `mensagem-carrinho ${tipo}` : "mensagem-carrinho";
   mensagem.textContent = texto;
   document.body.appendChild(mensagem);
 

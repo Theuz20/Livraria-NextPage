@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Mostra a tela de confirmação com o email que foi usado
+  // e dispara o toast verde pra deixar claro que funcionou
   function mostrarConfirmacao(email) {
     textoConfirmacao.textContent =
       `Enviamos as instruções pra redefinir a senha para ${email}. Verifique sua caixa de entrada e também a pasta de spam.`;
@@ -52,6 +53,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Reseta o botão por garantia
     btnEnviar.textContent = "Enviar instruções";
     btnEnviar.disabled = false;
+
+    // Toast verde bem visível — diferente da cor de fundo da página
+    mostrarMensagem("E-mail enviado com sucesso! ✓", "sucesso");
   }
 
   // Botão "Não recebi o e-mail" — volta pro formulário e avisa que reenviou

@@ -690,6 +690,12 @@ footer {
   transform: translateY(0);
 }
 
+/* Toast verde — usado pra confirmações de sucesso (ex: email enviado, status salvo) */
+.mensagem-carrinho.sucesso {
+  background-color: #16a34a;
+  color: #ffffff;
+}
+
 .desabilitado {
   pointer-events: none;
   opacity: 0.55;
