@@ -120,6 +120,11 @@ function buscarDadosDaPaginaLivro(botao) {
  * @param {object} produto
  */
 function adicionarAoCarrinho(produto) {
+  if (!estaLogado()) {
+    window.location.href = "login.html?redirect=" + encodeURIComponent(window.location.pathname.split("/").pop());
+    return;
+  }
+
   const carrinho = lerCarrinho();
   const itemExistente = carrinho.find((item) => item.id === produto.id);
 
