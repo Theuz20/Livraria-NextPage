@@ -150,41 +150,46 @@
 }
 
 @media (max-width: 768px) {
-  .pagina-livros {
-    padding-top: 28px;
-  }
+  .pagina-livros { padding-top: 20px; }
 
   .topo-catalogo {
-    padding: 42px 24px;
-    border-radius: 18px;
+    padding: 32px 22px;
+    border-radius: 16px;
     text-align: center;
   }
 
-  .topo-catalogo p {
-    margin: 0 auto;
-  }
+  .topo-catalogo p { margin: 0 auto; }
 
   .filtros-livros {
-    justify-content: center;
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
 
-  .catalogo-livros .card-livro img {
-    height: 340px;
+  .filtros-livros::-webkit-scrollbar { display: none; }
+
+  .filtros-livros button { flex-shrink: 0; }
+
+  .catalogo-livros {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
   }
+
+  .catalogo-livros .card-livro img { height: 220px; }
 }
 
 @media (max-width: 480px) {
-  .filtros-livros {
-    justify-content: flex-start;
+  .catalogo-livros {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
 
-  .filtros-livros button {
-    flex: 1 1 auto;
-  }
+  .catalogo-livros .card-livro img { height: 190px; }
 
-  .catalogo-livros .card-livro img {
-    height: 320px;
-  }
+  .topo-catalogo h1 { font-size: 1.6rem; }
 }
 
 /* ── Mensagem de pesquisa vazia ────────────────────────────────── */

@@ -81,3 +81,46 @@ function mostrarMensagem(texto, tipo) {
     setTimeout(() => mensagem.remove(), 250);
   }, 2600);
 }
+
+
+// ── Menu mobile hamburguer ────────────────────────────────────────
+// Abre/fecha o menu de navegação no mobile ao clicar no hamburguer.
+// Também fecha o menu se clicar fora dele.
+document.addEventListener("DOMContentLoaded", function () {
+  const btn  = document.getElementById("btn-hamburguer");
+  const nav  = document.getElementById("menu-navegacao");
+  const acoes = document.querySelector(".acoes-navbar");
+  if (!btn || !nav) return;
+
+  function abrirMenu() {
+    const aberto = btn.classList.toggle("aberto");
+    btn.setAttribute("aria-expanded", aberto);
+    nav.classList.toggle("menu-aberto", aberto);
+    acoes?.classList.toggle("menu-aberto", aberto);
+  }
+
+  btn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    abrirMenu();
+  });
+
+  // Fecha ao clicar em qualquer link do menu
+  nav.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      btn.classList.remove("aberto");
+      btn.setAttribute("aria-expanded", "false");
+      nav.classList.remove("menu-aberto");
+      acoes?.classList.remove("menu-aberto");
+    });
+  });
+
+  // Fecha ao clicar fora
+  document.addEventListener("click", function (e) {
+    if (!btn.contains(e.target) && !nav.contains(e.target)) {
+      btn.classList.remove("aberto");
+      btn.setAttribute("aria-expanded", "false");
+      nav.classList.remove("menu-aberto");
+      acoes?.classList.remove("menu-aberto");
+    }
+  });
+});

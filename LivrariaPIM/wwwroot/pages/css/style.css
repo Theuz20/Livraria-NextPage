@@ -705,10 +705,48 @@ footer {
   display: none;
 }
 
+/* ── Hamburguer ───────────────────────────────────────────────────── */
+
+.btn-hamburguer {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 6px;
+  border: 0;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.08);
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-left: auto;
+  transition: background 0.2s;
+}
+
+.btn-hamburguer:hover { background: rgba(255,255,255,0.15); }
+
+.btn-hamburguer span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+
+/* Animação X quando aberto */
+.btn-hamburguer.aberto span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.btn-hamburguer.aberto span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.btn-hamburguer.aberto span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── Responsivo — tablet ──────────────────────────────────────────── */
+
 @media (max-width: 1100px) {
   .barra-navegacao {
     flex-wrap: wrap;
-    gap: 18px 28px;
+    gap: 14px 20px;
     padding-right: 4%;
     padding-left: 4%;
   }
@@ -719,13 +757,8 @@ footer {
     max-width: none;
   }
 
-  .menu-navegacao {
-    margin-left: auto;
-  }
-
-  .acoes-navbar {
-    margin-left: 0;
-  }
+  .menu-navegacao { margin-left: auto; }
+  .acoes-navbar   { margin-left: 0; }
 
   .banner-principal {
     flex-direction: column;
@@ -733,9 +766,7 @@ footer {
     padding: 52px 32px;
   }
 
-  .texto-banner {
-    max-width: 760px;
-  }
+  .texto-banner { max-width: 760px; }
 
   .imagem-banner {
     flex-basis: auto;
@@ -747,103 +778,179 @@ footer {
   }
 }
 
+/* ── Responsivo — mobile ─────────────────────────────────────────── */
+
 @media (max-width: 768px) {
+
+  /* Header: logo + hamburguer na mesma linha, resto colapsado */
   .barra-navegacao {
-    flex-direction: column;
-    align-items: stretch;
-    padding-right: 20px;
-    padding-left: 20px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto;
+    align-items: center;
+    gap: 0;
+    padding: 14px 20px;
   }
 
   .logo-livraria {
-    text-align: center;
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 1.5rem;
   }
 
-  .menu-navegacao {
-    justify-content: center;
-    flex-wrap: wrap;
+  .btn-hamburguer {
+    display: flex;
+    grid-column: 2;
+    grid-row: 1;
     margin-left: 0;
   }
 
-  .acoes-navbar {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .banner-principal {
-    margin-top: 28px;
-    padding: 42px 24px;
-  }
-
-  .texto-banner h1 {
-    font-size: 2.15rem;
-  }
-
-  .titulo-secao {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .card-livro img {
-    height: 340px;
-  }
-
-  .conteudo-modal-livro {
-    grid-template-columns: 1fr;
-    max-height: calc(100vh - 48px);
-    overflow: auto;
-  }
-
-  .conteudo-modal-livro img {
-    max-height: 280px;
-  }
-
-  .conteudo-rodape {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    width: calc(100% - 28px);
-  }
-
+  /* Pesquisa aparece abaixo da linha logo+hamburguer */
   .caixa-pesquisa {
-    flex-direction: column;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    order: unset;
+    flex-basis: auto;
+    width: 100%;
+    max-width: none;
+    margin-top: 12px;
   }
 
-  .caixa-pesquisa button {
-    min-height: 44px;
+  /* Nav e ações: ocultas por padrão, surgem com .menu-aberto */
+  .menu-navegacao,
+  .acoes-navbar {
+    grid-column: 1 / -1;
+    display: none;
+    width: 100%;
+    margin: 0;
+  }
+
+  .menu-navegacao.menu-aberto,
+  .acoes-navbar.menu-aberto {
+    display: flex;
   }
 
   .menu-navegacao {
-    gap: 14px;
-    font-size: 0.92rem;
+    grid-row: 3;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin-top: 10px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 4px;
+  }
+
+  .menu-navegacao a {
+    padding: 13px 16px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+  }
+
+  .menu-navegacao a:hover,
+  .menu-navegacao .pagina-ativa {
+    background: rgba(255,255,255,0.08);
+    color: var(--azul-claro);
   }
 
   .acoes-navbar {
+    grid-row: 4;
+    justify-content: stretch;
+    gap: 10px;
+    margin-top: 10px;
+    padding-bottom: 4px;
+  }
+
+  .link-login,
+  .botao-carrinho {
+    flex: 1;
+    justify-content: center;
+  }
+
+  /* Banner */
+  .banner-principal {
+    margin-top: 20px;
+    padding: 36px 22px;
+    border-radius: 20px;
+  }
+
+  .texto-banner h1 { font-size: 2rem; }
+  .texto-banner p  { font-size: 0.95rem; }
+
+  /* Seções */
+  .titulo-secao {
+    align-items: flex-start;
+    flex-direction: column;
     gap: 10px;
   }
 
-  .botao-carrinho {
-    min-height: 42px;
-    padding: 0 14px;
+  /* Cards */
+  .card-livro img { height: 300px; }
+
+  .grade-livros {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
   }
 
-  .link-login {
-    min-height: 42px;
-    padding: 0 14px;
+  /* Footer */
+  .conteudo-rodape {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 20px;
+  }
+
+  .rodape-final { font-size: 0.8rem; }
+}
+
+/* ── Responsivo — mobile pequeno ─────────────────────────────────── */
+
+@media (max-width: 480px) {
+  .container { width: calc(100% - 24px); }
+
+  .barra-navegacao { padding: 12px 16px; }
+
+  .logo-livraria { font-size: 1.35rem; }
+
+  .caixa-pesquisa {
+    border-radius: 10px;
+  }
+
+  .caixa-pesquisa input {
+    padding: 12px 14px;
+    font-size: 0.9rem;
+  }
+
+  .caixa-pesquisa button {
+    padding: 0 16px;
+    font-size: 0.85rem;
   }
 
   .banner-principal {
-    border-radius: 18px;
+    padding: 28px 18px;
+    border-radius: 16px;
+    gap: 24px;
   }
 
-  .imagem-banner img {
-    aspect-ratio: 1 / 1.15;
+  .texto-banner h1    { font-size: 1.7rem; }
+  .etiqueta-banner    { font-size: 0.78rem; }
+  .botao-banner       { width: 100%; text-align: center; }
+
+  .imagem-banner img  { aspect-ratio: 1 / 0.9; }
+
+  .grade-livros {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 
-  .preco-livro {
-    font-size: 1.8rem;
+  .card-livro img { height: 220px; }
+
+  .preco-livro { font-size: 1.5rem; }
+
+  .conteudo-rodape {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
+
+  .coluna-rodape h3 { font-size: 1rem; }
 }

@@ -342,8 +342,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-end;
   gap: 6px;
   flex: 1;
+  height: 100%;
   position: relative;
 }
 
@@ -1326,4 +1328,32 @@
   .modal-info-pedido {
     grid-template-columns: 1fr;
   }
+}
+
+
+/* ── Mobile refinements ─────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+  .pagina-conta { margin-top: 16px; }
+
+  .sidebar-conta { padding: 16px; }
+
+  .nav-conta { gap: 6px; }
+
+  .aba-conta {
+    padding: 8px 10px;
+    font-size: 0.76rem;
+    border-radius: 8px;
+  }
+
+  .area-conta {
+    padding: 18px 16px;
+    border-radius: 14px;
+  }
+
+  .stats-rapidos { grid-template-columns: 1fr 1fr; gap: 10px; }
+
+  .stat-rapido { padding: 14px; }
+
+  .stat-rapido strong { font-size: 1.5rem; }
 }

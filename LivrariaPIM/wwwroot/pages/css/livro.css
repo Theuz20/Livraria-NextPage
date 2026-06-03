@@ -282,3 +282,34 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ── Mobile refinements ─────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+  .pagina-detalhe { padding-top: 16px; }
+
+  .detalhe-livro,
+  .bloco-descricao,
+  .ficha-tecnica {
+    padding: 18px 16px;
+    border-radius: 14px;
+  }
+
+  .capa-detalhe img {
+    max-height: 280px;
+    object-fit: contain;
+  }
+
+  .conteudo-detalhe h1 { font-size: 1.5rem; }
+
+  .preco-detalhe { font-size: 2rem; }
+
+  .compra-detalhe { gap: 10px; }
+
+  .livros-relacionados .grade-livros {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .livros-relacionados .card-livro img { height: 180px; }
+}

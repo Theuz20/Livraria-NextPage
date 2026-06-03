@@ -404,3 +404,38 @@
     border-radius: 16px;
   }
 }
+
+/* ── Mobile refinements ─────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+  .pagina-checkout { padding-top: 16px; }
+
+  .topo-checkout {
+    padding: 28px 18px;
+    border-radius: 14px;
+    gap: 16px;
+  }
+
+  .bloco-checkout,
+  .resumo-checkout {
+    padding: 18px 16px;
+    border-radius: 12px;
+  }
+
+  .bloco-checkout h2 { font-size: 1rem; }
+
+  .campo-formulario input,
+  .campo-formulario select {
+    padding: 12px 14px;
+    font-size: 0.9rem;
+  }
+
+  .item-resumo {
+    gap: 10px;
+  }
+
+  .item-resumo img {
+    width: 50px;
+    height: 68px;
+  }
+}
